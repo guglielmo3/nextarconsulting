@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F0B562718E87AEF00EA0D20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562618E87AEF00EA0D20 /* Foundation.framework */; };
+		2F0B562918E87AEF00EA0D20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562818E87AEF00EA0D20 /* CoreGraphics.framework */; };
+		2F0B562B18E87AEF00EA0D20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562A18E87AEF00EA0D20 /* UIKit.framework */; };
+		2F0B563118E87AEF00EA0D20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B562F18E87AEF00EA0D20 /* InfoPlist.strings */; };
+		2F0B563318E87AEF00EA0D20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B563218E87AEF00EA0D20 /* main.m */; };
+		2F0B563718E87AEF00EA0D20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B563618E87AEF00EA0D20 /* AppDelegate.m */; };
+		2F0B563A18E87AEF00EA0D20 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B563818E87AEF00EA0D20 /* Main_iPhone.storyboard */; };
+		2F0B563D18E87AEF00EA0D20 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B563B18E87AEF00EA0D20 /* Main_iPad.storyboard */; };
+		2F0B564018E87AEF00EA0D20 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B563F18E87AEF00EA0D20 /* FirstViewController.m */; };
+		2F0B564318E87AEF00EA0D20 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B564218E87AEF00EA0D20 /* SecondViewController.m */; };
+		2F0B564518E87AEF00EA0D20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B564418E87AEF00EA0D20 /* Images.xcassets */; };
+		2F0B564C18E87AEF00EA0D20 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B564B18E87AEF00EA0D20 /* XCTest.framework */; };
+		2F0B564D18E87AEF00EA0D20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562618E87AEF00EA0D20 /* Foundation.framework */; };
+		2F0B564E18E87AEF00EA0D20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562A18E87AEF00EA0D20 /* UIKit.framework */; };
+		2F0B565618E87AEF00EA0D20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B565418E87AEF00EA0D20 /* InfoPlist.strings */; };
+		2F0B565818E87AEF00EA0D20 /* nextarconsultingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B565718E87AEF00EA0D20 /* nextarconsultingTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F0B564F18E87AEF00EA0D20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F0B561B18E87AEE00EA0D20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F0B562218E87AEE00EA0D20;
+			remoteInfo = nextarconsulting;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2F0B562318E87AEE00EA0D20 /* nextarconsulting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nextarconsulting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F0B562618E87AEF00EA0D20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2F0B562818E87AEF00EA0D20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2F0B562A18E87AEF00EA0D20 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2F0B562E18E87AEF00EA0D20 /* nextarconsulting-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nextarconsulting-Info.plist"; sourceTree = "<group>"; };
+		2F0B563018E87AEF00EA0D20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2F0B563218E87AEF00EA0D20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2F0B563418E87AEF00EA0D20 /* nextarconsulting-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nextarconsulting-Prefix.pch"; sourceTree = "<group>"; };
+		2F0B563518E87AEF00EA0D20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2F0B563618E87AEF00EA0D20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2F0B563918E87AEF00EA0D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		2F0B563C18E87AEF00EA0D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		2F0B563E18E87AEF00EA0D20 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		2F0B563F18E87AEF00EA0D20 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		2F0B564118E87AEF00EA0D20 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		2F0B564218E87AEF00EA0D20 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		2F0B564418E87AEF00EA0D20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2F0B564A18E87AEF00EA0D20 /* nextarconsultingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nextarconsultingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F0B564B18E87AEF00EA0D20 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2F0B565318E87AEF00EA0D20 /* nextarconsultingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nextarconsultingTests-Info.plist"; sourceTree = "<group>"; };
+		2F0B565518E87AEF00EA0D20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2F0B565718E87AEF00EA0D20 /* nextarconsultingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nextarconsultingTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F0B562018E87AEE00EA0D20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0B562918E87AEF00EA0D20 /* CoreGraphics.framework in Frameworks */,
+				2F0B562B18E87AEF00EA0D20 /* UIKit.framework in Frameworks */,
+				2F0B562718E87AEF00EA0D20 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F0B564718E87AEF00EA0D20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0B564C18E87AEF00EA0D20 /* XCTest.framework in Frameworks */,
+				2F0B564E18E87AEF00EA0D20 /* UIKit.framework in Frameworks */,
+				2F0B564D18E87AEF00EA0D20 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F0B561A18E87AEE00EA0D20 = {
+			isa = PBXGroup;
+			children = (
+				2F0B562C18E87AEF00EA0D20 /* nextarconsulting */,
+				2F0B565118E87AEF00EA0D20 /* nextarconsultingTests */,
+				2F0B562518E87AEE00EA0D20 /* Frameworks */,
+				2F0B562418E87AEE00EA0D20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F0B562418E87AEE00EA0D20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B562318E87AEE00EA0D20 /* nextarconsulting.app */,
+				2F0B564A18E87AEF00EA0D20 /* nextarconsultingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F0B562518E87AEE00EA0D20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B562618E87AEF00EA0D20 /* Foundation.framework */,
+				2F0B562818E87AEF00EA0D20 /* CoreGraphics.framework */,
+				2F0B562A18E87AEF00EA0D20 /* UIKit.framework */,
+				2F0B564B18E87AEF00EA0D20 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2F0B562C18E87AEF00EA0D20 /* nextarconsulting */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B563518E87AEF00EA0D20 /* AppDelegate.h */,
+				2F0B563618E87AEF00EA0D20 /* AppDelegate.m */,
+				2F0B563818E87AEF00EA0D20 /* Main_iPhone.storyboard */,
+				2F0B563B18E87AEF00EA0D20 /* Main_iPad.storyboard */,
+				2F0B563E18E87AEF00EA0D20 /* FirstViewController.h */,
+				2F0B563F18E87AEF00EA0D20 /* FirstViewController.m */,
+				2F0B564118E87AEF00EA0D20 /* SecondViewController.h */,
+				2F0B564218E87AEF00EA0D20 /* SecondViewController.m */,
+				2F0B564418E87AEF00EA0D20 /* Images.xcassets */,
+				2F0B562D18E87AEF00EA0D20 /* Supporting Files */,
+			);
+			path = nextarconsulting;
+			sourceTree = "<group>";
+		};
+		2F0B562D18E87AEF00EA0D20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B562E18E87AEF00EA0D20 /* nextarconsulting-Info.plist */,
+				2F0B562F18E87AEF00EA0D20 /* InfoPlist.strings */,
+				2F0B563218E87AEF00EA0D20 /* main.m */,
+				2F0B563418E87AEF00EA0D20 /* nextarconsulting-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F0B565118E87AEF00EA0D20 /* nextarconsultingTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B565718E87AEF00EA0D20 /* nextarconsultingTests.m */,
+				2F0B565218E87AEF00EA0D20 /* Supporting Files */,
+			);
+			path = nextarconsultingTests;
+			sourceTree = "<group>";
+		};
+		2F0B565218E87AEF00EA0D20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B565318E87AEF00EA0D20 /* nextarconsultingTests-Info.plist */,
+				2F0B565418E87AEF00EA0D20 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F0B562218E87AEE00EA0D20 /* nextarconsulting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F0B565B18E87AEF00EA0D20 /* Build configuration list for PBXNativeTarget "nextarconsulting" */;
+			buildPhases = (
+				2F0B561F18E87AEE00EA0D20 /* Sources */,
+				2F0B562018E87AEE00EA0D20 /* Frameworks */,
+				2F0B562118E87AEE00EA0D20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nextarconsulting;
+			productName = nextarconsulting;
+			productReference = 2F0B562318E87AEE00EA0D20 /* nextarconsulting.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2F0B564918E87AEF00EA0D20 /* nextarconsultingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F0B565E18E87AEF00EA0D20 /* Build configuration list for PBXNativeTarget "nextarconsultingTests" */;
+			buildPhases = (
+				2F0B564618E87AEF00EA0D20 /* Sources */,
+				2F0B564718E87AEF00EA0D20 /* Frameworks */,
+				2F0B564818E87AEF00EA0D20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F0B565018E87AEF00EA0D20 /* PBXTargetDependency */,
+			);
+			name = nextarconsultingTests;
+			productName = nextarconsultingTests;
+			productReference = 2F0B564A18E87AEF00EA0D20 /* nextarconsultingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F0B561B18E87AEE00EA0D20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Guglielmo Puglia";
+				TargetAttributes = {
+					2F0B564918E87AEF00EA0D20 = {
+						TestTargetID = 2F0B562218E87AEE00EA0D20;
+					};
+				};
+			};
+			buildConfigurationList = 2F0B561E18E87AEE00EA0D20 /* Build configuration list for PBXProject "nextarconsulting" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F0B561A18E87AEE00EA0D20;
+			productRefGroup = 2F0B562418E87AEE00EA0D20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F0B562218E87AEE00EA0D20 /* nextarconsulting */,
+				2F0B564918E87AEF00EA0D20 /* nextarconsultingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F0B562118E87AEE00EA0D20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0B563D18E87AEF00EA0D20 /* Main_iPad.storyboard in Resources */,
+				2F0B564518E87AEF00EA0D20 /* Images.xcassets in Resources */,
+				2F0B563A18E87AEF00EA0D20 /* Main_iPhone.storyboard in Resources */,
+				2F0B563118E87AEF00EA0D20 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F0B564818E87AEF00EA0D20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0B565618E87AEF00EA0D20 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F0B561F18E87AEE00EA0D20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0B564318E87AEF00EA0D20 /* SecondViewController.m in Sources */,
+				2F0B563718E87AEF00EA0D20 /* AppDelegate.m in Sources */,
+				2F0B564018E87AEF00EA0D20 /* FirstViewController.m in Sources */,
+				2F0B563318E87AEF00EA0D20 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F0B564618E87AEF00EA0D20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0B565818E87AEF00EA0D20 /* nextarconsultingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F0B565018E87AEF00EA0D20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F0B562218E87AEE00EA0D20 /* nextarconsulting */;
+			targetProxy = 2F0B564F18E87AEF00EA0D20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2F0B562F18E87AEF00EA0D20 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F0B563018E87AEF00EA0D20 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2F0B563818E87AEF00EA0D20 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F0B563918E87AEF00EA0D20 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		2F0B563B18E87AEF00EA0D20 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F0B563C18E87AEF00EA0D20 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		2F0B565418E87AEF00EA0D20 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F0B565518E87AEF00EA0D20 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2F0B565918E87AEF00EA0D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F0B565A18E87AEF00EA0D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F0B565C18E87AEF00EA0D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nextarconsulting/nextarconsulting-Prefix.pch";
+				INFOPLIST_FILE = "nextarconsulting/nextarconsulting-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2F0B565D18E87AEF00EA0D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nextarconsulting/nextarconsulting-Prefix.pch";
+				INFOPLIST_FILE = "nextarconsulting/nextarconsulting-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2F0B565F18E87AEF00EA0D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/nextarconsulting.app/nextarconsulting";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nextarconsulting/nextarconsulting-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "nextarconsultingTests/nextarconsultingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2F0B566018E87AEF00EA0D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/nextarconsulting.app/nextarconsulting";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nextarconsulting/nextarconsulting-Prefix.pch";
+				INFOPLIST_FILE = "nextarconsultingTests/nextarconsultingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F0B561E18E87AEE00EA0D20 /* Build configuration list for PBXProject "nextarconsulting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F0B565918E87AEF00EA0D20 /* Debug */,
+				2F0B565A18E87AEF00EA0D20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F0B565B18E87AEF00EA0D20 /* Build configuration list for PBXNativeTarget "nextarconsulting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F0B565C18E87AEF00EA0D20 /* Debug */,
+				2F0B565D18E87AEF00EA0D20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2F0B565E18E87AEF00EA0D20 /* Build configuration list for PBXNativeTarget "nextarconsultingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F0B565F18E87AEF00EA0D20 /* Debug */,
+				2F0B566018E87AEF00EA0D20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F0B561B18E87AEE00EA0D20 /* Project object */;
+}
