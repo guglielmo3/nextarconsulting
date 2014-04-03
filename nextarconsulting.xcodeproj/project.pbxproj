@@ -23,6 +23,8 @@
 		2F0B564E18E87AEF00EA0D20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562A18E87AEF00EA0D20 /* UIKit.framework */; };
 		2F0B565618E87AEF00EA0D20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B565418E87AEF00EA0D20 /* InfoPlist.strings */; };
 		2F0B565818E87AEF00EA0D20 /* nextarconsultingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B565718E87AEF00EA0D20 /* nextarconsultingTests.m */; };
+		2F0B566318E87B3400EA0D20 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B566118E87B3400EA0D20 /* Model.xcdatamodeld */; };
+		2F2B2C1318EDD830009F9AE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2B2C1218EDD830009F9AE9 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,16 @@
 		2F0B565318E87AEF00EA0D20 /* nextarconsultingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nextarconsultingTests-Info.plist"; sourceTree = "<group>"; };
 		2F0B565518E87AEF00EA0D20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F0B565718E87AEF00EA0D20 /* nextarconsultingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nextarconsultingTests.m; sourceTree = "<group>"; };
+		2F0B566218E87B3400EA0D20 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2F2B2C1218EDD830009F9AE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2F2B2C1418EDDC1C009F9AE9 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
+		2F2B2C1518EDDCCF009F9AE9 /* 120120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120120.png; sourceTree = "<group>"; };
+		2F2B2C1618EDDCDB009F9AE9 /* 7676.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7676.png; sourceTree = "<group>"; };
+		2F2B2C1718EDDCE7009F9AE9 /* 152152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 152152.png; sourceTree = "<group>"; };
+		2F2B2C1818EDDD69009F9AE9 /* 8080.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8080.png; sourceTree = "<group>"; };
+		2F2B2C1918EDDD78009F9AE9 /* 4040.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4040.png; sourceTree = "<group>"; };
+		2F2B2C1A18EDDD82009F9AE9 /* 5858.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5858.png; sourceTree = "<group>"; };
+		2F2B2C1B18EDDD8D009F9AE9 /* 2929.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2929.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +79,7 @@
 			files = (
 				2F0B562918E87AEF00EA0D20 /* CoreGraphics.framework in Frameworks */,
 				2F0B562B18E87AEF00EA0D20 /* UIKit.framework in Frameworks */,
+				2F2B2C1318EDD830009F9AE9 /* MapKit.framework in Frameworks */,
 				2F0B562718E87AEF00EA0D20 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +100,15 @@
 		2F0B561A18E87AEE00EA0D20 = {
 			isa = PBXGroup;
 			children = (
+				2F2B2C1B18EDDD8D009F9AE9 /* 2929.png */,
+				2F2B2C1A18EDDD82009F9AE9 /* 5858.png */,
+				2F2B2C1918EDDD78009F9AE9 /* 4040.png */,
+				2F2B2C1818EDDD69009F9AE9 /* 8080.png */,
+				2F2B2C1718EDDCE7009F9AE9 /* 152152.png */,
+				2F2B2C1618EDDCDB009F9AE9 /* 7676.png */,
+				2F2B2C1518EDDCCF009F9AE9 /* 120120.png */,
+				2F2B2C1418EDDC1C009F9AE9 /* logo1.png */,
+				2F0B566118E87B3400EA0D20 /* Model.xcdatamodeld */,
 				2F0B562C18E87AEF00EA0D20 /* nextarconsulting */,
 				2F0B565118E87AEF00EA0D20 /* nextarconsultingTests */,
 				2F0B562518E87AEE00EA0D20 /* Frameworks */,
@@ -106,6 +128,7 @@
 		2F0B562518E87AEE00EA0D20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F2B2C1218EDD830009F9AE9 /* MapKit.framework */,
 				2F0B562618E87AEF00EA0D20 /* Foundation.framework */,
 				2F0B562818E87AEF00EA0D20 /* CoreGraphics.framework */,
 				2F0B562A18E87AEF00EA0D20 /* UIKit.framework */,
@@ -207,6 +230,14 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Guglielmo Puglia";
 				TargetAttributes = {
+					2F0B562218E87AEE00EA0D20 = {
+						DevelopmentTeam = 785Y4LUVD4;
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					2F0B564918E87AEF00EA0D20 = {
 						TestTargetID = 2F0B562218E87AEE00EA0D20;
 					};
@@ -260,6 +291,7 @@
 			files = (
 				2F0B564318E87AEF00EA0D20 /* SecondViewController.m in Sources */,
 				2F0B563718E87AEF00EA0D20 /* AppDelegate.m in Sources */,
+				2F0B566318E87B3400EA0D20 /* Model.xcdatamodeld in Sources */,
 				2F0B564018E87AEF00EA0D20 /* FirstViewController.m in Sources */,
 				2F0B563318E87AEF00EA0D20 /* main.m in Sources */,
 			);
@@ -394,8 +426,8 @@
 		2F0B565C18E87AEF00EA0D20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nextarconsulting/nextarconsulting-Prefix.pch";
 				INFOPLIST_FILE = "nextarconsulting/nextarconsulting-Info.plist";
@@ -407,8 +439,8 @@
 		2F0B565D18E87AEF00EA0D20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nextarconsulting/nextarconsulting-Prefix.pch";
 				INFOPLIST_FILE = "nextarconsulting/nextarconsulting-Info.plist";
@@ -476,6 +508,7 @@
 				2F0B565D18E87AEF00EA0D20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F0B565E18E87AEF00EA0D20 /* Build configuration list for PBXNativeTarget "nextarconsultingTests" */ = {
 			isa = XCConfigurationList;
@@ -484,8 +517,22 @@
 				2F0B566018E87AEF00EA0D20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2F0B566118E87B3400EA0D20 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2F0B566218E87B3400EA0D20 /* Model.xcdatamodel */,
+			);
+			currentVersion = 2F0B566218E87B3400EA0D20 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2F0B561B18E87AEE00EA0D20 /* Project object */;
 }
