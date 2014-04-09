@@ -21,7 +21,6 @@
 		2F0B564E18E87AEF00EA0D20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562A18E87AEF00EA0D20 /* UIKit.framework */; };
 		2F0B565618E87AEF00EA0D20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B565418E87AEF00EA0D20 /* InfoPlist.strings */; };
 		2F0B565818E87AEF00EA0D20 /* nextarconsultingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B565718E87AEF00EA0D20 /* nextarconsultingTests.m */; };
-		2F0B566318E87B3400EA0D20 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B566118E87B3400EA0D20 /* Model.xcdatamodeld */; };
 		2F2B2C1318EDD830009F9AE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2B2C1218EDD830009F9AE9 /* MapKit.framework */; };
 		2F5EEF9018F58B2A003CF4D2 /* Lavori.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF8F18F58B2A003CF4D2 /* Lavori.m */; };
 		2F5EEF9318F58B89003CF4D2 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9218F58B89003CF4D2 /* CoreDataHelper.m */; };
@@ -33,6 +32,7 @@
 		2F5EEFD018F58E93003CF4D2 /* Contattaci.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB518F58E93003CF4D2 /* Contattaci.m */; };
 		2F5EEFD118F58E93003CF4D2 /* Aggiorna.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB718F58E93003CF4D2 /* Aggiorna.m */; };
 		2F5EEFDC18F5A5CA003CF4D2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFDB18F5A5CA003CF4D2 /* Reachability.m */; };
+		2F8D542D18F5C36B00C6E5A9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D542B18F5C36B00C6E5A9 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,6 @@
 		2F0B565318E87AEF00EA0D20 /* nextarconsultingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nextarconsultingTests-Info.plist"; sourceTree = "<group>"; };
 		2F0B565518E87AEF00EA0D20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F0B565718E87AEF00EA0D20 /* nextarconsultingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nextarconsultingTests.m; sourceTree = "<group>"; };
-		2F0B566218E87B3400EA0D20 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2F2B2C1218EDD830009F9AE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2F2B2C1418EDDC1C009F9AE9 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
 		2F2B2C1518EDDCCF009F9AE9 /* 120120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120120.png; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		2F5EEFB718F58E93003CF4D2 /* Aggiorna.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aggiorna.m; sourceTree = "<group>"; };
 		2F5EEFDA18F5A5CA003CF4D2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		2F5EEFDB18F5A5CA003CF4D2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		2F8D542C18F5C36B00C6E5A9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,13 +220,13 @@
 		2F5EEF8D18F58ADB003CF4D2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				2F0B566118E87B3400EA0D20 /* Model.xcdatamodeld */,
 				2F5EEFDA18F5A5CA003CF4D2 /* Reachability.h */,
 				2F5EEFDB18F5A5CA003CF4D2 /* Reachability.m */,
 				2F5EEF8E18F58B2A003CF4D2 /* Lavori.h */,
 				2F5EEF8F18F58B2A003CF4D2 /* Lavori.m */,
 				2F5EEF9118F58B89003CF4D2 /* CoreDataHelper.h */,
 				2F5EEF9218F58B89003CF4D2 /* CoreDataHelper.m */,
+				2F8D542B18F5C36B00C6E5A9 /* Model.xcdatamodeld */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -350,13 +350,13 @@
 				2F5EEFCE18F58E93003CF4D2 /* SearchMessaggiViewController.m in Sources */,
 				2F0B563718E87AEF00EA0D20 /* AppDelegate.m in Sources */,
 				2F5EEF9018F58B2A003CF4D2 /* Lavori.m in Sources */,
-				2F0B566318E87B3400EA0D20 /* Model.xcdatamodeld in Sources */,
 				2F5EEFD118F58E93003CF4D2 /* Aggiorna.m in Sources */,
 				2F0B563318E87AEF00EA0D20 /* main.m in Sources */,
 				2F5EEFD018F58E93003CF4D2 /* Contattaci.m in Sources */,
 				2F5EEFC218F58E93003CF4D2 /* DettaglioMessaggi.m in Sources */,
 				2F5EEF9318F58B89003CF4D2 /* CoreDataHelper.m in Sources */,
 				2F5EEFC018F58E93003CF4D2 /* MessaggiTableViewController.m in Sources */,
+				2F8D542D18F5C36B00C6E5A9 /* Model.xcdatamodeld in Sources */,
 				2F5EEFCF18F58E93003CF4D2 /* CheckConnessione.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,12 +589,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2F0B566118E87B3400EA0D20 /* Model.xcdatamodeld */ = {
+		2F8D542B18F5C36B00C6E5A9 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2F0B566218E87B3400EA0D20 /* Model.xcdatamodel */,
+				2F8D542C18F5C36B00C6E5A9 /* Model.xcdatamodel */,
 			);
-			currentVersion = 2F0B566218E87B3400EA0D20 /* Model.xcdatamodel */;
+			currentVersion = 2F8D542C18F5C36B00C6E5A9 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
