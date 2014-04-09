@@ -405,7 +405,7 @@ NSString *tipoRichiesta;
 
      
     }
-    MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil andSortKey:@"progressivo" andSortAscending:NO andContext:managedObjectContext];
+    MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
     app = MessaggiListData.count;
     int ciclo = 0;
     
