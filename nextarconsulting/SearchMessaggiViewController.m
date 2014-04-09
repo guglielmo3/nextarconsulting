@@ -107,7 +107,7 @@
     //  Fill in the cell contents
     
     cell.makeLabel.text = [currentCell title];
-    cell.modelLabel.text = [currentCell description_];
+    cell.modelLabel.text = [currentCell title];
     
     
     return cell;
@@ -179,10 +179,10 @@
 - (void)filterContentForSearchText:(NSString*)searchText {
     
     
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(description_ CONTAINS[cd] %@)",searchText];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(title CONTAINS[cd] %@)",searchText];
     if ([CoreDataHelper countForEntity:@"Lavori" withPredicate:pred andContext:managedObjectContext] != 0)
     {
-        MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
+        MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:pred andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
         int app = MessaggiListData.count;
         int ciclo = 0;
         
@@ -203,8 +203,8 @@
             
             /* code to act on each element as it is returned */
             self.MessaggiMakes =  [self.MessaggiMakes  arrayByAddingObject:[ currentCell title]];
-            self.MessaggiModels =  [self.MessaggiModels arrayByAddingObject:[ currentCell description_]];
-            self.MessaggiImages =  [self.MessaggiImages arrayByAddingObject:[ currentCell link]];
+            self.MessaggiModels =  [self.MessaggiModels arrayByAddingObject:[ currentCell title]];
+          //  self.MessaggiImages =  [self.MessaggiImages arrayByAddingObject:[ currentCell link]];
             ciclo = ciclo +1;
         }
 

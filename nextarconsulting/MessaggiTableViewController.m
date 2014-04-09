@@ -12,6 +12,7 @@
 #import "CoreDataHelper.h"
 #import "AppDelegate.h"
 #import "Lavori.h"
+#import "Aggiorna.h"
 #import "CheckConnessione.h"
 
 
@@ -81,7 +82,7 @@ NSString *tipoRichiesta;
     }
     
   //  [self SelAuto:[Segment titleForSegmentAtIndex:1] :@"1"];
-    [self gestiscidaticore:[NSString stringWithFormat:@"%d",2014] annoint:2014 cancella:0];
+    [self gestiscidaticore];
     
   	
     [alert dismissWithClickedButtonIndex:0 animated:true];
@@ -119,12 +120,109 @@ NSString *tipoRichiesta;
     contenutoTag = [[NSMutableString alloc] init];
    
     
-    [self VerficaAggiornamenti];
+    MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil  andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
+    
+    int app = MessaggiListData.count;
+    
+    
+    
+    
+    if ( app == 0)
+    {
+        BOOL controllo;
+        controllo = [[CheckConnessione alloc] eseguiControllo];
+        if (controllo) {
+            
+            
+            
+            UIAlertView *alert;
+            alert = [[UIAlertView alloc] initWithTitle:@"Attendere"
+                                               message:@"Download e Installazione ultime Offerte"
+                                              delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+            [alert show];
+            
+            UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+            
+            [indicator startAnimating];
+            [alert addSubview:indicator];
+            
+            indicator.center = CGPointMake(140, 90);
+            
+            int n = 0;
+            while (n<50)
+            {
+                [[NSRunLoop currentRunLoop] limitDateForMode:NSDefaultRunLoopMode];
+                [NSThread sleepForTimeInterval:0.001];
+                n++;
+            }
+            
+            
+            
+            NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=atom";
+            NSURL *url = [NSURL URLWithString:path];
+            NSXMLParser *parser =[[NSXMLParser alloc] initWithContentsOfURL:url];
+            tipoRichiesta = @"tam";
+            [parser setDelegate:self];
+            [parser parse];
+            
+            int tempNum;
+            
+            
+            [CoreDataHelper deleteAllObjectsForEntity:@"Lavori" withPredicate:nil andContext:managedObjectContext];
+            
+            
+            
+            
+            
+            int app0 = self.MessaggiMakes1.count;
+            int ciclo0 = 0;
+            
+            while (ciclo0 <= (app0 -1)) {
+                self.currentMessaggi = (Lavori *)[NSEntityDescription insertNewObjectForEntityForName:@"Lavori" inManagedObjectContext:self.managedObjectContext];
+                
+                // For both new and existing pictures, fill in the details from the form
+                NSNumber *prganno = [NSNumber numberWithInt:ciclo0];
+                [self.currentMessaggi setProgressivo:prganno];
+                [self.currentMessaggi setTitle:[self.MessaggiMakes objectAtIndex:ciclo0]];
+                ciclo0 = ciclo0 +1;
+                //  Commit item to core data
+                NSError *error;
+                if (![self.managedObjectContext save:&error])
+                    NSLog(@"Failed to add new picture with error: %@", [error domain]);
+            }
+
+            
+            
+            
+            [[UIApplication sharedApplication]cancelAllLocalNotifications];
+            
+            /*
+             UILocalNotification *localNotification = [[UILocalNotification alloc]init];
+             [localNotification setApplicationIconBadgeNumber:0];
+             */
+            [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+            
+            
+            [alert dismissWithClickedButtonIndex:0 animated:true];
+            
+            // Do any additional setup after loading the view, typically from a nib.
+        }
+        else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Spiacente" message:@"Non sono presenti connessioni internet attive al momento, riprovare più tardi." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            
+        }
+
+        
+        
+        
+    }
     
     
 }
 
-
+         
+         
 
 - (void)viewDidUnload
 {
@@ -159,7 +257,8 @@ NSString *tipoRichiesta;
     //  Fill in the cell contents
     
     cell.makeLabel.text = [currentCell title];
-    cell.modelLabel.text = [currentCell description_];
+//    cell.modelLabel.text = [currentCell description_];
+    cell.modelLabel.text = [currentCell title];
     
     cell.MessaggiImage.contentMode = UIViewContentModeScaleAspectFit;
    // cell.MessaggiImage.image = [UIImage imageWithData:[currentCell smallpicture]];
@@ -264,7 +363,6 @@ NSString *tipoRichiesta;
                                                initWithObjects: [self.MessaggiMakes 
                                                                  objectAtIndex:[myIndexPath row]],
                                                [self.MessaggiModels objectAtIndex:[myIndexPath row]],
-                                               [self.MessaggiImages objectAtIndex:[myIndexPath row]],
                                                nil];
     }
     else {
@@ -273,80 +371,39 @@ NSString *tipoRichiesta;
     
 }
 
--(void) gestiscidaticore :(NSString *) annoStr annoint:(int) annoint cancella:(int) cancella
+-(void) gestiscidaticore
 {
     MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil  andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
     
     int app = MessaggiListData.count;
-    if ([CoreDataHelper countForEntity:@"Lavori"
-                            andContext:managedObjectContext] != app) {
-        [CoreDataHelper deleteAllObjectsForEntity:@"Lavori"
-                                       andContext:managedObjectContext];
-        app=0;
-    }
     
-    /*
-    NSPredicate *pred1 = [NSPredicate predicateWithFormat:@"(username == %@ )", annoStr];
-    if ([CoreDataHelper countForEntity:@"Users"  withPredicate:pred1 andContext:managedObjectContext] == 0) {
-        [CoreDataHelper deleteAllObjectsForEntity:@"Messaggi" withPredicate:pred andContext:managedObjectContext];
-        app=0;
-    }
-    */
     
-    if (cancella == 1) {
-        [CoreDataHelper deleteAllObjectsForEntity:@"Lavori" withPredicate:nil andContext:managedObjectContext];
-        app=0;
-    }
-    NSNumber *anno  =[NSNumber numberWithInt:annoint];
+   
     
     if ( app == 0)
     {
-        int app0 = self.MessaggiImages.count;
-        int ciclo0 = 0;
-        
-        while (ciclo0 <= (app0 -1)) {
-            self.currentMessaggi = (Lavori *)[NSEntityDescription insertNewObjectForEntityForName:@"Lavori" inManagedObjectContext:self.managedObjectContext];
+              
+       /*     int app0 = self.MessaggiImages.count;
+            int ciclo0 = 0;
             
-            // For both new and existing pictures, fill in the details from the form
-            NSNumber *prganno = [NSNumber numberWithInt:ciclo0];
-            [self.currentMessaggi setProgressivo:prganno];
-            [self.currentMessaggi setTitle:[self.MessaggiMakes objectAtIndex:ciclo0]];
-            [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
-          /*  UIImage *MessaggiPhoto = [UIImage imageNamed: [self.MessaggiImages objectAtIndex:ciclo0]];
-            
-            // Resize and save a smaller version for the table
-            float resize = 74.0;
-            float actualWidth = MessaggiPhoto.size.height;
-            float actualHeight = MessaggiPhoto.size.height;
-            float divBy, newWidth, newHeight;
-            if (actualWidth > actualHeight) {
-                divBy = (actualWidth / resize);
-                newWidth = resize;
-                newHeight = (actualHeight / divBy);
-            } else {
-                divBy = (actualHeight / resize);
-                newWidth = (actualWidth / divBy);
-                newHeight = resize;
+            while (ciclo0 <= (app0 -1)) {
+                self.currentMessaggi = (Lavori *)[NSEntityDescription insertNewObjectForEntityForName:@"Lavori" inManagedObjectContext:self.managedObjectContext];
+                
+                // For both new and existing pictures, fill in the details from the form
+                NSNumber *prganno = [NSNumber numberWithInt:ciclo0];
+                [self.currentMessaggi setProgressivo:prganno];
+                [self.currentMessaggi setTitle:[self.MessaggiMakes objectAtIndex:ciclo0]];
+                [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
+                ciclo0 = ciclo0 +1;
+                //  Commit item to core data
+                NSError *error;
+                if (![self.managedObjectContext save:&error])
+                    NSLog(@"Failed to add new picture with error: %@", [error domain]);
             }
-            CGRect rect = CGRectMake(0.0, 0.0, newWidth, newHeight);
-            UIGraphicsBeginImageContext(rect.size);
-            [MessaggiPhoto drawInRect:rect];
-            UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            
-            // Save the small image version
-            NSData *smallImageData = UIImageJPEGRepresentation(smallImage, 1.0);
-            [self.currentMessaggi setSmallpicture:smallImageData];*/
-            ciclo0 = ciclo0 +1;
-            //  Commit item to core data
-            NSError *error;
-            if (![self.managedObjectContext save:&error])
-                NSLog(@"Failed to add new picture with error: %@", [error domain]);
-        }
-        
-        
-    
-    
+         */
+          [self VerficaAggiornamenti];
+
+     
     }
     MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil andSortKey:@"progressivo" andSortAscending:NO andContext:managedObjectContext];
     app = MessaggiListData.count;
@@ -363,19 +420,16 @@ NSString *tipoRichiesta;
     
     //  Fill in the cell contents
     
-    while (ciclo <= (app -1)) {
+    while (ciclo < (app -1)) {
         currentCell = [MessaggiListData objectAtIndex:ciclo];
         
         
         self.MessaggiMakes =  [self.MessaggiMakes  arrayByAddingObject:[ currentCell title]];
-        self.MessaggiModels =  [self.MessaggiModels arrayByAddingObject:[ currentCell description_]];
-      //  self.MessaggiImages =  [self.MessaggiImages arrayByAddingObject:[ currentCell smallpicture]];
-        self.MessaggiImages = nil;
+        self.MessaggiModels =  [self.MessaggiMakes  arrayByAddingObject:[ currentCell title]];
+        //  self.MessaggiModels =  [self.MessaggiModels arrayByAddingObject:[ currentCell description_]];
+     //   self.MessaggiImages =  [self.MessaggiImages arrayByAddingObject:[ currentCell link]];
         ciclo = ciclo +1;
     }
-
-
-    [self gestiscidaticore:[NSString stringWithFormat:@"%d",2014] annoint:2014 cancella:0];
 
 }
  
@@ -413,7 +467,7 @@ NSString *tipoRichiesta;
         
        
         //verifico Aggiornamento Messaggi
-        NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=rss";
+        NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=atom";
         NSURL *url = [NSURL URLWithString:path];
         NSXMLParser *parser =[[NSXMLParser alloc] initWithContentsOfURL:url];
         tipoRichiesta = @"up";
@@ -494,12 +548,11 @@ NSString *tipoRichiesta;
 {
     NSString *immutableString = [NSString stringWithString:contenutoTag];
     
-    
     if ([elementName isEqualToString:@"title"]) {
         [_MessaggiMakes1 addObject:immutableString];
     }
     
-    if ([elementName isEqualToString:@"description"]) {
+    if ([elementName isEqualToString:@"content"]) {
         NSRange r;
         while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
             immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
@@ -510,19 +563,7 @@ NSString *tipoRichiesta;
     if ([elementName isEqualToString:@"link"]) {
         [_MessaggiImages1 addObject:immutableString];
     }
-    
-    
-    
-            /*   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Spiacente" message:[NSString stringWithFormat:@"%@: %@",elementName,contenutoTag] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-             [alertView show];
-             */
-            //  [nomeTitolo setText:[NSString stringWithFormat:@"%@: %@",elementName,contenutoTag]];
-            
-    
-    
-    contenutoTag = [[NSMutableString alloc] init];
-    
-    storingCharacters = NO;
+
 }
 - (BOOL)configurePersistentStoreCoordinatorForURL:(NSURL *)url ofType:(NSString *)fileType modelConfiguration:(NSString *)configuration storeOptions:(NSDictionary *)storeOptions error:(NSError **)error
 {

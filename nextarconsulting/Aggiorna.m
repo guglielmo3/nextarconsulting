@@ -92,7 +92,7 @@ NSString *tipoRichiesta;
         
     
     
-    NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=rss";
+    NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=atom";
     NSURL *url = [NSURL URLWithString:path];
     NSXMLParser *parser =[[NSXMLParser alloc] initWithContentsOfURL:url];
     tipoRichiesta = @"tam";
@@ -103,33 +103,13 @@ NSString *tipoRichiesta;
     
     int tempNum;
     
-        MessaggiModels = [[NSMutableArray alloc] init];
-        MessaggiMakes = [[NSMutableArray alloc] init];
-        MessaggiImages = [[NSMutableArray alloc] init];
-        
+       
             [CoreDataHelper deleteAllObjectsForEntity:@"Lavori" withPredicate:nil andContext:managedObjectContext];
 
     
         
-            tempNum = [[self.AnniMutableArray objectAtIndex:ciclo0] intValue];
+        [self gestiscidaticore];
         
-
-           // [self.curNumMessaggiAnno setAnno:(NSNumber *)[self.AnniMutableArray objectAtIndex:ciclo0]];
-
-        
-            NSError *error;
-            if (![self.managedObjectContext save:&error])
-                NSLog(@"Errore nel salvataggio delle informazioni: %@", [error domain]);
-            
-            tipoRichiesta = @"am";
-            [parser setDelegate:self];
-            [parser parse];
-            
-            tempNum = [[self.AnniMutableArray objectAtIndex:ciclo0] intValue];
-            [self gestiscidaticore:[self.AnniMutableArray objectAtIndex:ciclo0] annoint:tempNum cancella:1]; 
-            
-            
-      
     
     
         [[UIApplication sharedApplication]cancelAllLocalNotifications];
@@ -172,7 +152,7 @@ NSString *tipoRichiesta;
             [MessaggiMakes addObject:immutableString];
         }
         
-        if ([elementName isEqualToString:@"description"]) {
+        if ([elementName isEqualToString:@"content"]) {
             NSRange r;
             while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
                 immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
@@ -228,18 +208,12 @@ NSString *tipoRichiesta;
     }
 }
 
--(void) gestiscidaticore :(NSString *) annoStr annoint:(int) annoint cancella:(int) cancella
+-(void) gestiscidaticore
 {
-    int app = MessaggiListData.count;
     
-    if (cancella == 1) {
         [CoreDataHelper deleteAllObjectsForEntity:@"Lavori" withPredicate:nil andContext:managedObjectContext];
-        app=0;
-    }
     
-    if ( app == 0)
-    {
-        int app0 = self.MessaggiImages.count;
+      int app0 = self.MessaggiMakes.count;
         int ciclo0 = 0;
         
         while (ciclo0 <= (app0 -1)) {
@@ -249,7 +223,7 @@ NSString *tipoRichiesta;
             NSNumber *prganno = [NSNumber numberWithInt:ciclo0];
             [self.currentMessaggi setProgressivo:prganno];
             [self.currentMessaggi setTitle:[self.MessaggiMakes objectAtIndex:ciclo0]];
-            [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
+         //   [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
            /* UIImage *MessaggiPhoto = [UIImage imageNamed: [self.MessaggiImages objectAtIndex:ciclo0]];
             
             // Resize and save a smaller version for the table
@@ -284,8 +258,6 @@ NSString *tipoRichiesta;
         
         
         
-        
-    }
 
 }
 

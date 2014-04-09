@@ -12,11 +12,9 @@
 
 @interface Lavori : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * progressivo;
+@property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * description_;
 @property (nonatomic, retain) NSString * link;
-@property (nonatomic, retain) NSString * permalink;
-@property (nonatomic) NSTimeInterval pubDate;
-@property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSNumber * progressivo;
 
 @end

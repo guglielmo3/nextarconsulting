@@ -11,11 +11,9 @@
 
 @implementation Lavori
 
+@dynamic progressivo;
+@dynamic title;
 @dynamic description_;
 @dynamic link;
-@dynamic permalink;
-@dynamic pubDate;
-@dynamic title;
-@dynamic progressivo;
 
 @end
