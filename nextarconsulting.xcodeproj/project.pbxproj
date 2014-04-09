@@ -124,6 +124,7 @@
 		2F0B561A18E87AEE00EA0D20 = {
 			isa = PBXGroup;
 			children = (
+				2F8D543218F5E8FA00C6E5A9 /* Ipad */,
 				2F5EEFD618F58FCE003CF4D2 /* Iphone */,
 				2F5EEF8D18F58ADB003CF4D2 /* CoreData */,
 				2F2B2C1B18EDDD8D009F9AE9 /* 2929.png */,
@@ -181,7 +182,6 @@
 				2F5EEFB718F58E93003CF4D2 /* Aggiorna.m */,
 				2F0B563518E87AEF00EA0D20 /* AppDelegate.h */,
 				2F0B563618E87AEF00EA0D20 /* AppDelegate.m */,
-				2F0B563B18E87AEF00EA0D20 /* Main_iPad.storyboard */,
 				2F0B564418E87AEF00EA0D20 /* Images.xcassets */,
 				2F0B562D18E87AEF00EA0D20 /* Supporting Files */,
 			);
@@ -237,6 +237,14 @@
 				2F0B563818E87AEF00EA0D20 /* Main_iPhone.storyboard */,
 			);
 			name = Iphone;
+			sourceTree = "<group>";
+		};
+		2F8D543218F5E8FA00C6E5A9 /* Ipad */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B563B18E87AEF00EA0D20 /* Main_iPad.storyboard */,
+			);
+			name = Ipad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,6 +411,7 @@
 				2F0B563C18E87AEF00EA0D20 /* Base */,
 			);
 			name = Main_iPad.storyboard;
+			path = nextarconsulting;
 			sourceTree = "<group>";
 		};
 		2F0B565418E87AEF00EA0D20 /* InfoPlist.strings */ = {
