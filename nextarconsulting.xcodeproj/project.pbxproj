@@ -15,8 +15,6 @@
 		2F0B563718E87AEF00EA0D20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B563618E87AEF00EA0D20 /* AppDelegate.m */; };
 		2F0B563A18E87AEF00EA0D20 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B563818E87AEF00EA0D20 /* Main_iPhone.storyboard */; };
 		2F0B563D18E87AEF00EA0D20 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B563B18E87AEF00EA0D20 /* Main_iPad.storyboard */; };
-		2F0B564018E87AEF00EA0D20 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B563F18E87AEF00EA0D20 /* FirstViewController.m */; };
-		2F0B564318E87AEF00EA0D20 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B564218E87AEF00EA0D20 /* SecondViewController.m */; };
 		2F0B564518E87AEF00EA0D20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B564418E87AEF00EA0D20 /* Images.xcassets */; };
 		2F0B564C18E87AEF00EA0D20 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B564B18E87AEF00EA0D20 /* XCTest.framework */; };
 		2F0B564D18E87AEF00EA0D20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562618E87AEF00EA0D20 /* Foundation.framework */; };
@@ -25,6 +23,16 @@
 		2F0B565818E87AEF00EA0D20 /* nextarconsultingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B565718E87AEF00EA0D20 /* nextarconsultingTests.m */; };
 		2F0B566318E87B3400EA0D20 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B566118E87B3400EA0D20 /* Model.xcdatamodeld */; };
 		2F2B2C1318EDD830009F9AE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2B2C1218EDD830009F9AE9 /* MapKit.framework */; };
+		2F5EEF9018F58B2A003CF4D2 /* Lavori.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF8F18F58B2A003CF4D2 /* Lavori.m */; };
+		2F5EEF9318F58B89003CF4D2 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9218F58B89003CF4D2 /* CoreDataHelper.m */; };
+		2F5EEFC018F58E93003CF4D2 /* MessaggiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9518F58E93003CF4D2 /* MessaggiTableViewController.m */; };
+		2F5EEFC118F58E93003CF4D2 /* MessaggiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9718F58E93003CF4D2 /* MessaggiTableViewCell.m */; };
+		2F5EEFC218F58E93003CF4D2 /* DettaglioMessaggi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9918F58E93003CF4D2 /* DettaglioMessaggi.m */; };
+		2F5EEFCE18F58E93003CF4D2 /* SearchMessaggiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB118F58E93003CF4D2 /* SearchMessaggiViewController.m */; };
+		2F5EEFCF18F58E93003CF4D2 /* CheckConnessione.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB318F58E93003CF4D2 /* CheckConnessione.m */; };
+		2F5EEFD018F58E93003CF4D2 /* Contattaci.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB518F58E93003CF4D2 /* Contattaci.m */; };
+		2F5EEFD118F58E93003CF4D2 /* Aggiorna.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB718F58E93003CF4D2 /* Aggiorna.m */; };
+		2F5EEFDC18F5A5CA003CF4D2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFDB18F5A5CA003CF4D2 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +58,6 @@
 		2F0B563618E87AEF00EA0D20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2F0B563918E87AEF00EA0D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		2F0B563C18E87AEF00EA0D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		2F0B563E18E87AEF00EA0D20 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		2F0B563F18E87AEF00EA0D20 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		2F0B564118E87AEF00EA0D20 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		2F0B564218E87AEF00EA0D20 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		2F0B564418E87AEF00EA0D20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2F0B564A18E87AEF00EA0D20 /* nextarconsultingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nextarconsultingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0B564B18E87AEF00EA0D20 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -70,6 +74,26 @@
 		2F2B2C1918EDDD78009F9AE9 /* 4040.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4040.png; sourceTree = "<group>"; };
 		2F2B2C1A18EDDD82009F9AE9 /* 5858.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5858.png; sourceTree = "<group>"; };
 		2F2B2C1B18EDDD8D009F9AE9 /* 2929.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2929.png; sourceTree = "<group>"; };
+		2F5EEF8E18F58B2A003CF4D2 /* Lavori.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lavori.h; sourceTree = "<group>"; };
+		2F5EEF8F18F58B2A003CF4D2 /* Lavori.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lavori.m; sourceTree = "<group>"; };
+		2F5EEF9118F58B89003CF4D2 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		2F5EEF9218F58B89003CF4D2 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		2F5EEF9418F58E93003CF4D2 /* MessaggiTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessaggiTableViewController.h; sourceTree = "<group>"; };
+		2F5EEF9518F58E93003CF4D2 /* MessaggiTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessaggiTableViewController.m; sourceTree = "<group>"; };
+		2F5EEF9618F58E93003CF4D2 /* MessaggiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessaggiTableViewCell.h; sourceTree = "<group>"; };
+		2F5EEF9718F58E93003CF4D2 /* MessaggiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessaggiTableViewCell.m; sourceTree = "<group>"; };
+		2F5EEF9818F58E93003CF4D2 /* DettaglioMessaggi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DettaglioMessaggi.h; sourceTree = "<group>"; };
+		2F5EEF9918F58E93003CF4D2 /* DettaglioMessaggi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DettaglioMessaggi.m; sourceTree = "<group>"; };
+		2F5EEFB018F58E93003CF4D2 /* SearchMessaggiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchMessaggiViewController.h; sourceTree = "<group>"; };
+		2F5EEFB118F58E93003CF4D2 /* SearchMessaggiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchMessaggiViewController.m; sourceTree = "<group>"; };
+		2F5EEFB218F58E93003CF4D2 /* CheckConnessione.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckConnessione.h; sourceTree = "<group>"; };
+		2F5EEFB318F58E93003CF4D2 /* CheckConnessione.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckConnessione.m; sourceTree = "<group>"; };
+		2F5EEFB418F58E93003CF4D2 /* Contattaci.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contattaci.h; sourceTree = "<group>"; };
+		2F5EEFB518F58E93003CF4D2 /* Contattaci.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contattaci.m; sourceTree = "<group>"; };
+		2F5EEFB618F58E93003CF4D2 /* Aggiorna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aggiorna.h; sourceTree = "<group>"; };
+		2F5EEFB718F58E93003CF4D2 /* Aggiorna.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aggiorna.m; sourceTree = "<group>"; };
+		2F5EEFDA18F5A5CA003CF4D2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		2F5EEFDB18F5A5CA003CF4D2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +124,8 @@
 		2F0B561A18E87AEE00EA0D20 = {
 			isa = PBXGroup;
 			children = (
+				2F5EEFD618F58FCE003CF4D2 /* Iphone */,
+				2F5EEF8D18F58ADB003CF4D2 /* CoreData */,
 				2F2B2C1B18EDDD8D009F9AE9 /* 2929.png */,
 				2F2B2C1A18EDDD82009F9AE9 /* 5858.png */,
 				2F2B2C1918EDDD78009F9AE9 /* 4040.png */,
@@ -108,7 +134,6 @@
 				2F2B2C1618EDDCDB009F9AE9 /* 7676.png */,
 				2F2B2C1518EDDCCF009F9AE9 /* 120120.png */,
 				2F2B2C1418EDDC1C009F9AE9 /* logo1.png */,
-				2F0B566118E87B3400EA0D20 /* Model.xcdatamodeld */,
 				2F0B562C18E87AEF00EA0D20 /* nextarconsulting */,
 				2F0B565118E87AEF00EA0D20 /* nextarconsultingTests */,
 				2F0B562518E87AEE00EA0D20 /* Frameworks */,
@@ -140,14 +165,23 @@
 		2F0B562C18E87AEF00EA0D20 /* nextarconsulting */ = {
 			isa = PBXGroup;
 			children = (
+				2F5EEF9418F58E93003CF4D2 /* MessaggiTableViewController.h */,
+				2F5EEF9518F58E93003CF4D2 /* MessaggiTableViewController.m */,
+				2F5EEF9618F58E93003CF4D2 /* MessaggiTableViewCell.h */,
+				2F5EEF9718F58E93003CF4D2 /* MessaggiTableViewCell.m */,
+				2F5EEF9818F58E93003CF4D2 /* DettaglioMessaggi.h */,
+				2F5EEF9918F58E93003CF4D2 /* DettaglioMessaggi.m */,
+				2F5EEFB018F58E93003CF4D2 /* SearchMessaggiViewController.h */,
+				2F5EEFB118F58E93003CF4D2 /* SearchMessaggiViewController.m */,
+				2F5EEFB218F58E93003CF4D2 /* CheckConnessione.h */,
+				2F5EEFB318F58E93003CF4D2 /* CheckConnessione.m */,
+				2F5EEFB418F58E93003CF4D2 /* Contattaci.h */,
+				2F5EEFB518F58E93003CF4D2 /* Contattaci.m */,
+				2F5EEFB618F58E93003CF4D2 /* Aggiorna.h */,
+				2F5EEFB718F58E93003CF4D2 /* Aggiorna.m */,
 				2F0B563518E87AEF00EA0D20 /* AppDelegate.h */,
 				2F0B563618E87AEF00EA0D20 /* AppDelegate.m */,
-				2F0B563818E87AEF00EA0D20 /* Main_iPhone.storyboard */,
 				2F0B563B18E87AEF00EA0D20 /* Main_iPad.storyboard */,
-				2F0B563E18E87AEF00EA0D20 /* FirstViewController.h */,
-				2F0B563F18E87AEF00EA0D20 /* FirstViewController.m */,
-				2F0B564118E87AEF00EA0D20 /* SecondViewController.h */,
-				2F0B564218E87AEF00EA0D20 /* SecondViewController.m */,
 				2F0B564418E87AEF00EA0D20 /* Images.xcassets */,
 				2F0B562D18E87AEF00EA0D20 /* Supporting Files */,
 			);
@@ -181,6 +215,28 @@
 				2F0B565418E87AEF00EA0D20 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F5EEF8D18F58ADB003CF4D2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B566118E87B3400EA0D20 /* Model.xcdatamodeld */,
+				2F5EEFDA18F5A5CA003CF4D2 /* Reachability.h */,
+				2F5EEFDB18F5A5CA003CF4D2 /* Reachability.m */,
+				2F5EEF8E18F58B2A003CF4D2 /* Lavori.h */,
+				2F5EEF8F18F58B2A003CF4D2 /* Lavori.m */,
+				2F5EEF9118F58B89003CF4D2 /* CoreDataHelper.h */,
+				2F5EEF9218F58B89003CF4D2 /* CoreDataHelper.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		2F5EEFD618F58FCE003CF4D2 /* Iphone */ = {
+			isa = PBXGroup;
+			children = (
+				2F0B563818E87AEF00EA0D20 /* Main_iPhone.storyboard */,
+			);
+			name = Iphone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,11 +345,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F0B564318E87AEF00EA0D20 /* SecondViewController.m in Sources */,
+				2F5EEFDC18F5A5CA003CF4D2 /* Reachability.m in Sources */,
+				2F5EEFC118F58E93003CF4D2 /* MessaggiTableViewCell.m in Sources */,
+				2F5EEFCE18F58E93003CF4D2 /* SearchMessaggiViewController.m in Sources */,
 				2F0B563718E87AEF00EA0D20 /* AppDelegate.m in Sources */,
+				2F5EEF9018F58B2A003CF4D2 /* Lavori.m in Sources */,
 				2F0B566318E87B3400EA0D20 /* Model.xcdatamodeld in Sources */,
-				2F0B564018E87AEF00EA0D20 /* FirstViewController.m in Sources */,
+				2F5EEFD118F58E93003CF4D2 /* Aggiorna.m in Sources */,
 				2F0B563318E87AEF00EA0D20 /* main.m in Sources */,
+				2F5EEFD018F58E93003CF4D2 /* Contattaci.m in Sources */,
+				2F5EEFC218F58E93003CF4D2 /* DettaglioMessaggi.m in Sources */,
+				2F5EEF9318F58B89003CF4D2 /* CoreDataHelper.m in Sources */,
+				2F5EEFC018F58E93003CF4D2 /* MessaggiTableViewController.m in Sources */,
+				2F5EEFCF18F58E93003CF4D2 /* CheckConnessione.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +394,7 @@
 				2F0B563918E87AEF00EA0D20 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
+			path = nextarconsulting;
 			sourceTree = "<group>";
 		};
 		2F0B563B18E87AEF00EA0D20 /* Main_iPad.storyboard */ = {
