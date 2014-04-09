@@ -64,6 +64,29 @@ NSString *tipoRichiesta;
  
     
 }
+-(IBAction)changeSeg{
+    
+    
+    alert.title =@"Attendere";
+    alert.message = @"Caricamento Offerte";
+    [alert show];
+    
+    
+    int n = 0;
+    while (n<50)
+    {
+        [[NSRunLoop currentRunLoop] limitDateForMode:NSDefaultRunLoopMode];
+        [NSThread sleepForTimeInterval:0.001];
+        n++;
+    }
+    
+  //  [self SelAuto:[Segment titleForSegmentAtIndex:1] :@"1"];
+    [self gestiscidaticore:[NSString stringWithFormat:@"%d",2014] annoint:2014 cancella:0];
+    
+  	
+    [alert dismissWithClickedButtonIndex:0 animated:true];
+    [self.tableView reloadData];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -252,7 +275,7 @@ NSString *tipoRichiesta;
 
 -(void) gestiscidaticore :(NSString *) annoStr annoint:(int) annoint cancella:(int) cancella
 {
-    MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil  andSortKey:@"pubdate" andSortAscending:YES andContext:managedObjectContext];
+    MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil  andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
     
     int app = MessaggiListData.count;
     if ([CoreDataHelper countForEntity:@"Lavori"
@@ -325,7 +348,7 @@ NSString *tipoRichiesta;
     
     
     }
-    MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil andSortKey:@"prrogressivo" andSortAscending:NO andContext:managedObjectContext];
+    MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil andSortKey:@"progressivo" andSortAscending:NO andContext:managedObjectContext];
     app = MessaggiListData.count;
     int ciclo = 0;
     
