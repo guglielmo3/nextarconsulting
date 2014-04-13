@@ -38,6 +38,8 @@
 @property (nonatomic, strong) NSMutableArray *MessaggiImages;
 @property (nonatomic, strong) NSMutableArray *MessaggiMakes;
 @property (nonatomic, strong) NSMutableArray *MessaggiModels;
+@property (nonatomic, strong) NSMutableArray *MessaggiDataPubblicazione;
+
 @property (nonatomic, strong) NSMutableArray *MAFotoAnno;
 @property (nonatomic, strong) NSMutableArray *MADocumentiAnno;
 @property (nonatomic, strong) NSMutableArray *MAvideoAnno;

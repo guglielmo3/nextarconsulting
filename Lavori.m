@@ -15,5 +15,6 @@
 @dynamic title;
 @dynamic description_;
 @dynamic link;
+@dynamic datapubblicazione;
 
 @end

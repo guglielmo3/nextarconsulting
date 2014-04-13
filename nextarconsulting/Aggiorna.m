@@ -30,6 +30,7 @@
 @synthesize MessaggiModels;
 @synthesize MessaggiMakes;
 @synthesize MessaggiImages;
+@synthesize MessaggiDataPubblicazione;
 @synthesize AnniMutableArray;
 @synthesize FotoListData;
 @synthesize MAFotoAnno;
@@ -38,7 +39,7 @@
 
 
 NSString *tipoRichiesta;
-
+NSString *caricaDati = @"0";
 
 
 - (void)viewDidLoad
@@ -57,6 +58,7 @@ NSString *tipoRichiesta;
     MessaggiModels = [[NSMutableArray alloc] init];
     MessaggiMakes = [[NSMutableArray alloc] init];
     MessaggiImages = [[NSMutableArray alloc] init];
+    MessaggiDataPubblicazione = [[NSMutableArray alloc] init];
     contenutoTag = [[NSMutableString alloc] init];
  
     
@@ -148,12 +150,22 @@ NSString *tipoRichiesta;
 {
     NSString *immutableString = [NSString stringWithString:contenutoTag];
     
-        if ([elementName isEqualToString:@"title"]) {
-            [MessaggiMakes addObject:immutableString];
+    NSRange r;
+    
+    if([elementName isEqualToString:@"entry"])
+    {
+        caricaDati = @"1";
+    }
+    
+    if([caricaDati isEqualToString:@"1"])
+    {
+      if ([elementName isEqualToString:@"title"]) {
+          while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+              immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+           [MessaggiMakes addObject:immutableString];
         }
         
         if ([elementName isEqualToString:@"content"]) {
-            NSRange r;
             while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
                 immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
             
@@ -163,7 +175,21 @@ NSString *tipoRichiesta;
         if ([elementName isEqualToString:@"link"]) {
             [MessaggiImages addObject:immutableString];
         }
+    
+        if ([elementName isEqualToString:@"published"])
+            {
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                // this is imporant - we set our input date format to match our input string
+                // if format doesn't match you'll get nil from your string, so be careful
+                [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+                NSDate *dateFromString = [[NSDate alloc] init];
+                // voila!
+                NSString *value = [immutableString substringWithRange:NSMakeRange(0, 10)];
+                dateFromString = [dateFormatter dateFromString:value];
+                [MessaggiDataPubblicazione addObject:dateFromString];
 
+            }
+    }
  
   
   contenutoTag = [[NSMutableString alloc] init];
@@ -223,6 +249,9 @@ NSString *tipoRichiesta;
             NSNumber *prganno = [NSNumber numberWithInt:ciclo0];
             [self.currentMessaggi setProgressivo:prganno];
             [self.currentMessaggi setTitle:[self.MessaggiMakes objectAtIndex:ciclo0]];
+            [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
+            [self.currentMessaggi setLink:[self.MessaggiImages objectAtIndex:ciclo0]];
+            [self.currentMessaggi setDatapubblicazione:[self.MessaggiDataPubblicazione objectAtIndex:ciclo0]];
          //   [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
            /* UIImage *MessaggiPhoto = [UIImage imageNamed: [self.MessaggiImages objectAtIndex:ciclo0]];
             
