@@ -29,6 +29,8 @@ static NSString* kAppId = @"152139888244542";
 @synthesize imageView = _imageView;
 @synthesize MessaggiDetailModel = _MessaggiDetailModel;
 @synthesize messaggioesteso = _messaggioesteso;
+@synthesize messaggioesteso1 = _messaggioesteso1;
+@synthesize messaggioesteso2 = _messaggioesteso2;
 //@synthesize facebook;
 //@synthesize managedObjectContext = _managedObjectContext;
 @synthesize  _quickList;
@@ -52,7 +54,7 @@ static NSString* kAppId = @"152139888244542";
 	}
     
     self.view.backgroundColor = [UIColor whiteColor];
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(title == %@ )", [self.MessaggiDetailModel objectAtIndex:0]];
+   // NSPredicate *pred = [NSPredicate predicateWithFormat:@"(progressivo == %@ )", [self.MessaggiDetailModel objectAtIndex:2]];
   /*  if ([CoreDataHelper countForEntity:@"Preferiti"  withPredicate:pred andContext:managedObjectContext] == 1) {
         btnpreferiti.hidden = false;
     }
@@ -62,10 +64,38 @@ static NSString* kAppId = @"152139888244542";
     
      
     self.makeLabel.text = [self.MessaggiDetailModel objectAtIndex:0];
-    self.modelLabel.text = [self.MessaggiDetailModel objectAtIndex:0];
+    self.modelLabel.text = [self.MessaggiDetailModel objectAtIndex:1];
+   // NSString *result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:2]];
+    
     self.messaggioesteso.text = [self.MessaggiDetailModel objectAtIndex:1];
+   // self.messaggioesteso1.text = result;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    NSString *DataPubblicazione = [dateFormatter stringFromDate:[self.MessaggiDetailModel objectAtIndex:3]];
+    
+    self.messaggioesteso1.text = DataPubblicazione;
+    self.messaggioesteso2.text = @"";
+    
+    
     
 }
+-(IBAction)Candidati:(id)sender
+{
+			[self launchMailAppOnDevice];
+
+}
+
+-(void)launchMailAppOnDevice
+{
+	NSString *recipients = [self.MessaggiDetailModel objectAtIndex:4];
+	
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:recipients]];
+}
+
+
+
 -(IBAction)loginToFacebook:(id)sender
 {
     BOOL controllo;

@@ -94,10 +94,10 @@ NSString *caricaDati = @"0";
         
     
     
-    NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=atom";
+    NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=rss";
     NSURL *url = [NSURL URLWithString:path];
     NSXMLParser *parser =[[NSXMLParser alloc] initWithContentsOfURL:url];
-    tipoRichiesta = @"tam";
+    tipoRichiesta = @"rss";
     [parser setDelegate:self];
     [parser parse];
     int app0 = self.AnniMutableArray.count;
@@ -152,6 +152,10 @@ NSString *caricaDati = @"0";
     
     NSRange r;
     
+    
+    if ([tipoRichiesta isEqualToString:@"atom"])
+    {
+    
     if([elementName isEqualToString:@"entry"])
     {
         caricaDati = @"1";
@@ -193,6 +197,53 @@ NSString *caricaDati = @"0";
                 [MessaggiDataPubblicazione addObject:dateFromString];
 
             }
+        
+    }
+    }
+    else
+    {
+        if([elementName isEqualToString:@"item"])
+        {
+            caricaDati = @"1";
+        }
+        
+         if([caricaDati isEqualToString:@"1"])
+        {
+            if ([elementName isEqualToString:@"title"]) {
+                while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                    immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+                NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+                noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                
+                
+                [MessaggiMakes addObject:noWhiteSpace];
+            }
+            
+            if ([elementName isEqualToString:@"description"]) {
+                while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                    immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+                
+                [MessaggiModels addObject:immutableString];
+            }
+            
+            if ([elementName isEqualToString:@"link"]) {
+                [MessaggiImages addObject:immutableString];
+            }
+            
+            if ([elementName isEqualToString:@"pubDate"])
+            {
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"dd MMM yyyy"];
+                NSDate *dateFromString = [[NSDate alloc] init];
+                // voila!
+                NSString *value = [immutableString substringWithRange:NSMakeRange(5, 11)];
+                dateFromString = [dateFormatter dateFromString:value];
+                [MessaggiDataPubblicazione addObject:dateFromString];
+                
+            }
+            
+        }
+
     }
  
   

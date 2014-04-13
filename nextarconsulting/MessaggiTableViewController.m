@@ -24,6 +24,8 @@
 @synthesize MessaggiMakes = _MessaggiMakes; 
 @synthesize MessaggiModels = _MessaggiModels;
 @synthesize MessaggiImages = _MessaggiImages;
+@synthesize MessaggiDataPubblicazione = _MessaggiDataPubblicazione;
+@synthesize MessaggiLink = _MessaggiLink;
 @synthesize Segment;
 @synthesize managedObjectContext;
 @synthesize currentMessaggi;
@@ -184,6 +186,9 @@ NSString *tipoRichiesta;
                 NSNumber *prganno = [NSNumber numberWithInt:ciclo0];
                 [self.currentMessaggi setProgressivo:prganno];
                 [self.currentMessaggi setTitle:[self.MessaggiMakes objectAtIndex:ciclo0]];
+                [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
+                [self.currentMessaggi setDatapubblicazione:[self.MessaggiDataPubblicazione objectAtIndex:ciclo0]];
+                [self.currentMessaggi setLink:[self.MessaggiLink objectAtIndex:ciclo0]];
                 ciclo0 = ciclo0 +1;
                 //  Commit item to core data
                 NSError *error;
@@ -363,6 +368,9 @@ NSString *tipoRichiesta;
                                                initWithObjects: [self.MessaggiMakes 
                                                                  objectAtIndex:[myIndexPath row]],
                                                [self.MessaggiModels objectAtIndex:[myIndexPath row]],
+                                               [self.MessaggiImages objectAtIndex:[myIndexPath row]],
+                                               [self.MessaggiDataPubblicazione objectAtIndex:[myIndexPath row]],
+                                               [self.MessaggiLink objectAtIndex:[myIndexPath row]],
                                                nil];
     }
     else {
@@ -412,9 +420,15 @@ NSString *tipoRichiesta;
     self.MessaggiMakes = [NSArray alloc];
     self.MessaggiModels = [NSArray alloc];
     self.MessaggiImages = [NSArray alloc];
+    self.MessaggiDataPubblicazione = [NSArray alloc];
+    self.MessaggiLink = [NSArray alloc];
+    
+    
     self.MessaggiMakes = [self.MessaggiMakes init];
     self.MessaggiModels = [self.MessaggiModels init];
     self.MessaggiImages = [self.MessaggiImages init];
+    self.MessaggiDataPubblicazione = [self.MessaggiDataPubblicazione init];
+    self.MessaggiLink = [self.MessaggiLink init ];
     
     Lavori *currentCell ;
     
@@ -425,7 +439,11 @@ NSString *tipoRichiesta;
         
         
         self.MessaggiMakes =  [self.MessaggiMakes  arrayByAddingObject:[ currentCell title]];
-        self.MessaggiModels =  [self.MessaggiMakes  arrayByAddingObject:[ currentCell title]];
+        self.MessaggiModels =  [self.MessaggiModels  arrayByAddingObject:[ currentCell description_]];
+        self.MessaggiImages = [self.MessaggiImages arrayByAddingObject: [currentCell progressivo]];
+        self.MessaggiDataPubblicazione = [self.MessaggiDataPubblicazione arrayByAddingObject:[currentCell datapubblicazione]];
+        self.MessaggiLink = [self.MessaggiLink arrayByAddingObject:[currentCell link]];
+        
         //  self.MessaggiModels =  [self.MessaggiModels arrayByAddingObject:[ currentCell description_]];
      //   self.MessaggiImages =  [self.MessaggiImages arrayByAddingObject:[ currentCell link]];
         ciclo = ciclo +1;

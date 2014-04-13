@@ -52,13 +52,16 @@
 -(IBAction)TweetthisButtonClicked:(id)sender;
 -(IBAction)loginToFacebook:(id)sender;
 -(IBAction)Pinch:(UIPinchGestureRecognizer *)recognizer;
+-(IBAction)Candidati:(id)sender;;
 
 @property (strong, nonatomic) NSArray *MessaggiDetailModel;
 @property (strong, nonatomic) IBOutlet UILabel *makeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *modelLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UITextView *messaggioesteso;
-//@property (strong, nonatomic) ACAccountStore *accounts; 
+@property (strong, nonatomic) IBOutlet UITextView *messaggioesteso1;
+@property (strong, nonatomic) IBOutlet UITextView *messaggioesteso2;
+//@property (strong, nonatomic) ACAccountStore *accounts;
 
 
 @end
