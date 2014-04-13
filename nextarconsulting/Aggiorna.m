@@ -162,7 +162,11 @@ NSString *caricaDati = @"0";
       if ([elementName isEqualToString:@"title"]) {
           while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
               immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-           [MessaggiMakes addObject:immutableString];
+          NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+          noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+          
+
+           [MessaggiMakes addObject:noWhiteSpace];
         }
         
         if ([elementName isEqualToString:@"content"]) {
