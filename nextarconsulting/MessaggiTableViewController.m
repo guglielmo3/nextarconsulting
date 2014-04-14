@@ -70,7 +70,7 @@ NSString *tipoRichiesta;
 -(IBAction)changeSeg{
     
     
-    alert.title =@"Attendere";
+  /*  alert.title =@"Attendere";
     alert.message = @"Caricamento Offerte";
     [alert show];
     
@@ -84,16 +84,35 @@ NSString *tipoRichiesta;
     }
     
   //  [self SelAuto:[Segment titleForSegmentAtIndex:1] :@"1"];
-    [self gestiscidaticore];
+   */
+   [self gestiscidaticore];
     
   	
-    [alert dismissWithClickedButtonIndex:0 animated:true];
+    //[alert dismissWithClickedButtonIndex:0 animated:true];
     [self.tableView reloadData];
+    [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:2.5];
+
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Scarica Nuove Offerte"];
+    
+    
+    
+    [refresh addTarget:self action:@selector(changeSeg)
+     
+      forControlEvents:UIControlEventValueChanged];
+    
+    
+    
+    self.refreshControl = refresh;
+    
+    
+    
     if (managedObjectContext == nil) 
 	{ 
         managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext]; 
@@ -226,7 +245,13 @@ NSString *tipoRichiesta;
     
 }
 
-         
+- (void)stopRefresh
+
+{
+    
+    [self.refreshControl endRefreshing];
+    
+}
          
 
 - (void)viewDidUnload
@@ -381,7 +406,7 @@ NSString *tipoRichiesta;
 
 -(void) gestiscidaticore
 {
-    MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil  andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
+  /*  MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil  andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
     
     int app = MessaggiListData.count;
     
@@ -391,29 +416,13 @@ NSString *tipoRichiesta;
     if ( app == 0)
     {
               
-       /*     int app0 = self.MessaggiImages.count;
-            int ciclo0 = 0;
-            
-            while (ciclo0 <= (app0 -1)) {
-                self.currentMessaggi = (Lavori *)[NSEntityDescription insertNewObjectForEntityForName:@"Lavori" inManagedObjectContext:self.managedObjectContext];
-                
-                // For both new and existing pictures, fill in the details from the form
-                NSNumber *prganno = [NSNumber numberWithInt:ciclo0];
-                [self.currentMessaggi setProgressivo:prganno];
-                [self.currentMessaggi setTitle:[self.MessaggiMakes objectAtIndex:ciclo0]];
-                [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
-                ciclo0 = ciclo0 +1;
-                //  Commit item to core data
-                NSError *error;
-                if (![self.managedObjectContext save:&error])
-                    NSLog(@"Failed to add new picture with error: %@", [error domain]);
-            }
-         */
-          [self VerficaAggiornamenti];
+              [self VerficaAggiornamenti];
 
      
     }
+   */
     MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:nil andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
+    int app ;
     app = MessaggiListData.count;
     int ciclo = 0;
     
