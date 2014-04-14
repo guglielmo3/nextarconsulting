@@ -38,6 +38,7 @@
 @synthesize NumUltimaPubblicazione;
 
 NSString *tipoRichiesta;
+NSString *caricaDatiAGG = @"0";
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -93,17 +94,117 @@ NSString *tipoRichiesta;
     [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:2.5];
 
 }
+-(void)Aggiorna
+{
+    BOOL controllo;
+    controllo = [[CheckConnessione alloc] eseguiControllo];
+    if (controllo) {
+        
+        
+        
+        UIAlertView *alert;
+        alert = [[UIAlertView alloc] initWithTitle:@"Attendere"
+                                           message:@"Download e Installazione ultime Offerte"
+                                          delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+        [alert show];
+        
+        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        
+        [indicator startAnimating];
+        [alert addSubview:indicator];
+        
+        indicator.center = CGPointMake(140, 90);
+        
+        int n = 0;
+        while (n<50)
+        {
+            [[NSRunLoop currentRunLoop] limitDateForMode:NSDefaultRunLoopMode];
+            [NSThread sleepForTimeInterval:0.001];
+            n++;
+        }
+        
+        
+        
+        NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=rss";
+        NSURL *url = [NSURL URLWithString:path];
+        NSXMLParser *parser =[[NSXMLParser alloc] initWithContentsOfURL:url];
+        tipoRichiesta = @"rss";
+        [parser setDelegate:self];
+        [parser parse];
+        int app0 = self.AnniMutableArray.count;
+        int ciclo0 = 0;
+        
+        int tempNum;
+        
+        
+        [CoreDataHelper deleteAllObjectsForEntity:@"Lavori" withPredicate:nil andContext:managedObjectContext];
+        
+        
+        
+        [self gestiscidaticoreAggiorna];
+        
+        
+        
+        [[UIApplication sharedApplication]cancelAllLocalNotifications];
+        
+        /*
+         UILocalNotification *localNotification = [[UILocalNotification alloc]init];
+         [localNotification setApplicationIconBadgeNumber:0];
+         */
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+        
+        
+        [alert dismissWithClickedButtonIndex:0 animated:true];
+        
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Spiacente" message:@"Non sono presenti connessioni internet attive al momento, riprovare più tardi." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        
+    }
+    
+}
+-(void) gestiscidaticoreAggiorna
+{
+    
+    
+    int app0 = self.MessaggiMakes.count;
+    int ciclo0 = 0;
+    
+    while (ciclo0 <= (app0 -1)) {
+        self.currentMessaggi = (Lavori *)[NSEntityDescription insertNewObjectForEntityForName:@"Lavori" inManagedObjectContext:self.managedObjectContext];
+        
+        // For both new and existing pictures, fill in the details from the form
+        NSNumber *prganno = [NSNumber numberWithInt:ciclo0];
+        [self.currentMessaggi setProgressivo:prganno];
+        [self.currentMessaggi setTitle:[self.MessaggiMakes objectAtIndex:ciclo0]];
+        [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
+        [self.currentMessaggi setLink:[self.MessaggiLink objectAtIndex:ciclo0]];
+        [self.currentMessaggi setDatapubblicazione:[self.MessaggiDataPubblicazione objectAtIndex:ciclo0]];
+          ciclo0 = ciclo0 +1;
+        //  Commit item to core data
+        NSError *error;
+        if (![self.managedObjectContext save:&error])
+            NSLog(@"Failed to add new picture with error: %@", [error domain]);
+    }
+    
+    
+    
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
     
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Scarica Nuove Offerte"];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Aggiorna Offerte"];
     
     
     
-    [refresh addTarget:self action:@selector(changeSeg)
+    [refresh addTarget:self action:@selector(Aggiorna)
      
       forControlEvents:UIControlEventValueChanged];
     
@@ -571,9 +672,12 @@ NSString *tipoRichiesta;
     if (storingCharacters) [contenutoTag appendString:string];
     
 }
+
+
 -(void) parser:(NSXMLParser *) parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-    NSString *immutableString = [NSString stringWithString:contenutoTag];
+ /*
+  NSString *immutableString = [NSString stringWithString:contenutoTag];
     
     if ([elementName isEqualToString:@"title"]) {
         [_MessaggiMakes1 addObject:immutableString];
@@ -590,8 +694,114 @@ NSString *tipoRichiesta;
     if ([elementName isEqualToString:@"link"]) {
         [_MessaggiImages1 addObject:immutableString];
     }
+  */
+    NSString *immutableString = [NSString stringWithString:contenutoTag];
+    
+    NSRange r;
+    
+    
+    if ([tipoRichiesta isEqualToString:@"atom"])
+    {
+        
+        if([elementName isEqualToString:@"entry"])
+        {
+            caricaDatiAGG = @"1";
+        }
+        
+        if([caricaDatiAGG isEqualToString:@"1"])
+        {
+            if ([elementName isEqualToString:@"title"]) {
+                while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                    immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+                NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+                noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                
+                
+                [_MessaggiMakes1 addObject:noWhiteSpace];
+            }
+            
+            if ([elementName isEqualToString:@"content"]) {
+                while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                    immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+                
+                [_MessaggiModels1 addObject:immutableString];
+            }
+            
+            if ([elementName isEqualToString:@"link"]) {
+                [_MessaggiImages1 addObject:immutableString];
+            }
+            
+            if ([elementName isEqualToString:@"published"])
+            {
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                // this is imporant - we set our input date format to match our input string
+                // if format doesn't match you'll get nil from your string, so be careful
+                [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+                NSDate *dateFromString = [[NSDate alloc] init];
+                // voila!
+                NSString *value = [immutableString substringWithRange:NSMakeRange(0, 10)];
+                dateFromString = [dateFormatter dateFromString:value];
+                [_MessaggiDataPubblicazione1 addObject:dateFromString];
+                
+            }
+            
+        }
+    }
+    else
+    {
+        if([elementName isEqualToString:@"item"])
+        {
+            caricaDatiAGG = @"1";
+        }
+        
+        if([caricaDatiAGG isEqualToString:@"1"])
+        {
+            if ([elementName isEqualToString:@"title"]) {
+                while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                    immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+                NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+                noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                
+                
+                [_MessaggiMakes1 addObject:noWhiteSpace];
+            }
+            
+            if ([elementName isEqualToString:@"description"]) {
+                while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                    immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+                
+                [_MessaggiModels1 addObject:immutableString];
+            }
+            
+            if ([elementName isEqualToString:@"link"]) {
+                [_MessaggiImages1 addObject:immutableString];
+            }
+            
+            if ([elementName isEqualToString:@"pubDate"])
+            {
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"dd MMM yyyy"];
+                NSDate *dateFromString = [[NSDate alloc] init];
+                // voila!
+                NSString *value = [immutableString substringWithRange:NSMakeRange(5, 11)];
+                dateFromString = [dateFormatter dateFromString:value];
+                [_MessaggiDataPubblicazione1 addObject:dateFromString];
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    contenutoTag = [[NSMutableString alloc] init];
+    
+    storingCharacters = NO;
+
 
 }
+
+
 - (BOOL)configurePersistentStoreCoordinatorForURL:(NSURL *)url ofType:(NSString *)fileType modelConfiguration:(NSString *)configuration storeOptions:(NSDictionary *)storeOptions error:(NSError **)error
 {
 	NSLog(@"configuring store.");

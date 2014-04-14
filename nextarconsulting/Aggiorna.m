@@ -135,6 +135,7 @@ NSString *caricaDati = @"0";
 }
 
 
+
 -(void) parser:(NSXMLParser *) parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     NSLog(@"Inizio Tag%@",elementName);
