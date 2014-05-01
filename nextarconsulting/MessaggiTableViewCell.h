@@ -12,5 +12,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *MessaggiImage;
 @property (nonatomic, strong) IBOutlet UILabel *makeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *modelLabel;
+@property (nonatomic, strong) IBOutlet UILabel *datapubb;
+@property (nonatomic, strong) IBOutlet UILabel *luogo;
 
 @end

@@ -280,7 +280,7 @@ NSString *caricaDatiAGG = @"0";
             
             
             
-            NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=atom";
+            NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=rss";
             NSURL *url = [NSURL URLWithString:path];
             NSXMLParser *parser =[[NSXMLParser alloc] initWithContentsOfURL:url];
             tipoRichiesta = @"tam";
@@ -390,7 +390,12 @@ NSString *caricaDatiAGG = @"0";
     cell.makeLabel.text = [currentCell title];
 //    cell.modelLabel.text = [currentCell description_];
     cell.modelLabel.text = [currentCell title];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+   NSString *DataPubblicazione = [dateFormatter stringFromDate:[currentCell datapubblicazione]];
     
+    cell.datapubb.text = DataPubblicazione;
+    cell.luogo.text = @"";
     cell.MessaggiImage.contentMode = UIViewContentModeScaleAspectFit;
    // cell.MessaggiImage.image = [UIImage imageWithData:[currentCell smallpicture]];
 

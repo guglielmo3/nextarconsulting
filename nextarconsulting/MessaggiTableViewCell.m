@@ -12,6 +12,8 @@
 @synthesize makeLabel = _makeLabel;
 @synthesize modelLabel = _modelLabel;
 @synthesize MessaggiImage = _MessaggiImage;
+@synthesize datapubb = _datapubb;
+@synthesize luogo = _luogo;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
