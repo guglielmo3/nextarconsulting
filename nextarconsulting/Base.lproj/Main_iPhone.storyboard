@@ -94,6 +94,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="LblAttesa" destination="0T9-4L-GBV" id="idk-ea-sLG"/>
                         <outlet property="searchDisplayController" destination="U7Y-gO-LAz" id="LTu-Fl-Bad"/>
