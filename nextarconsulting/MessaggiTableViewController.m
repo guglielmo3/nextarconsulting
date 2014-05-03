@@ -94,6 +94,14 @@ NSString *caricaDatiAGG = @"0";
     [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:2.5];
 
 }
+- (void)stopRefresh
+
+{
+    
+    [self.refreshControl endRefreshing];
+    
+}
+
 -(void)Aggiorna
 {
     BOOL controllo;
@@ -102,7 +110,7 @@ NSString *caricaDatiAGG = @"0";
         
         
         
-        UIAlertView *alert;
+    /*    UIAlertView *alert;
         alert = [[UIAlertView alloc] initWithTitle:@"Attendere"
                                            message:@"Download e Installazione ultime Offerte"
                                           delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
@@ -122,7 +130,7 @@ NSString *caricaDatiAGG = @"0";
             [NSThread sleepForTimeInterval:0.001];
             n++;
         }
-        
+      */
         
         
         NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=rss";
@@ -154,7 +162,7 @@ NSString *caricaDatiAGG = @"0";
         [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
         
         
-        [alert dismissWithClickedButtonIndex:0 animated:true];
+   //     [alert dismissWithClickedButtonIndex:0 animated:true];
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -163,6 +171,7 @@ NSString *caricaDatiAGG = @"0";
         [alertView show];
         
     }
+    [self stopRefresh];
     
 }
 -(void) gestiscidaticoreAggiorna
@@ -346,13 +355,7 @@ NSString *caricaDatiAGG = @"0";
     
 }
 
-- (void)stopRefresh
 
-{
-    
-    [self.refreshControl endRefreshing];
-    
-}
          
 
 - (void)viewDidUnload
