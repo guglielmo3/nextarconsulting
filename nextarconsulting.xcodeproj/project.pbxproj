@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0375D31914FE5C0083A38B /* AggiornaMessaggi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0375D11914FE5C0083A38B /* AggiornaMessaggi.m */; };
 		2F0B562718E87AEF00EA0D20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562618E87AEF00EA0D20 /* Foundation.framework */; };
 		2F0B562918E87AEF00EA0D20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562818E87AEF00EA0D20 /* CoreGraphics.framework */; };
 		2F0B562B18E87AEF00EA0D20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562A18E87AEF00EA0D20 /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F0375D11914FE5C0083A38B /* AggiornaMessaggi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AggiornaMessaggi.m; sourceTree = "<group>"; };
+		2F0375D21914FE5C0083A38B /* AggiornaMessaggi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AggiornaMessaggi.h; sourceTree = "<group>"; };
 		2F0B562318E87AEE00EA0D20 /* nextarconsulting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nextarconsulting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0B562618E87AEF00EA0D20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2F0B562818E87AEF00EA0D20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -175,7 +178,9 @@
 				2F5EEFB018F58E93003CF4D2 /* SearchMessaggiViewController.h */,
 				2F5EEFB118F58E93003CF4D2 /* SearchMessaggiViewController.m */,
 				2F5EEFB218F58E93003CF4D2 /* CheckConnessione.h */,
+				2F0375D21914FE5C0083A38B /* AggiornaMessaggi.h */,
 				2F5EEFB318F58E93003CF4D2 /* CheckConnessione.m */,
+				2F0375D11914FE5C0083A38B /* AggiornaMessaggi.m */,
 				2F5EEFB418F58E93003CF4D2 /* Contattaci.h */,
 				2F5EEFB518F58E93003CF4D2 /* Contattaci.m */,
 				2F5EEFB618F58E93003CF4D2 /* Aggiorna.h */,
@@ -354,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F5EEFDC18F5A5CA003CF4D2 /* Reachability.m in Sources */,
+				2F0375D31914FE5C0083A38B /* AggiornaMessaggi.m in Sources */,
 				2F5EEFC118F58E93003CF4D2 /* MessaggiTableViewCell.m in Sources */,
 				2F5EEFCE18F58E93003CF4D2 /* SearchMessaggiViewController.m in Sources */,
 				2F0B563718E87AEF00EA0D20 /* AppDelegate.m in Sources */,

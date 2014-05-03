@@ -12,9 +12,8 @@
 #import "CoreDataHelper.h"
 #import "AppDelegate.h"
 #import "Lavori.h"
-#import "Aggiorna.h"
 #import "CheckConnessione.h"
-
+#import "AggiornaMessaggi.h"
 
 @interface MessaggiTableViewController ()
 
@@ -30,7 +29,6 @@
 @synthesize managedObjectContext;
 @synthesize currentMessaggi;
 @synthesize MessaggiListData;
-@synthesize LblAttesa;
 @synthesize indicatore;
 @synthesize alert;
 @synthesize AnniMutableArray;
@@ -143,23 +141,27 @@ NSString *caricaDatiAGG = @"0";
         int ciclo0 = 0;
         
         int tempNum;
+ 
+        AggiornaMessaggi *agg = [AggiornaMessaggi alloc];
+        
+        [agg AggiornaDati];
         
         
-        [CoreDataHelper deleteAllObjectsForEntity:@"Lavori" withPredicate:nil andContext:managedObjectContext];
+   //     [CoreDataHelper deleteAllObjectsForEntity:@"Lavori" withPredicate:nil andContext:managedObjectContext];
         
         
         
-        [self gestiscidaticoreAggiorna];
+     //   [self gestiscidaticoreAggiorna];
         
         
         
-        [[UIApplication sharedApplication]cancelAllLocalNotifications];
+       // [[UIApplication sharedApplication]cancelAllLocalNotifications];
         
         /*
          UILocalNotification *localNotification = [[UILocalNotification alloc]init];
          [localNotification setApplicationIconBadgeNumber:0];
          */
-        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+        //[UIApplication sharedApplication].applicationIconBadgeNumber = 0;
         
         
    //     [alert dismissWithClickedButtonIndex:0 animated:true];
@@ -172,6 +174,8 @@ NSString *caricaDatiAGG = @"0";
         
     }
     [self stopRefresh];
+    [self gestiscidaticore];
+    
     
 }
 -(void) gestiscidaticoreAggiorna
@@ -197,6 +201,8 @@ NSString *caricaDatiAGG = @"0";
         if (![self.managedObjectContext save:&error])
             NSLog(@"Failed to add new picture with error: %@", [error domain]);
     }
+    
+    [self gestiscidaticore];
     
     
     
@@ -381,16 +387,18 @@ NSString *caricaDatiAGG = @"0";
     if (cell == nil) {
         cell = [[MessaggiTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault 
-                reuseIdentifier:CellIdentifier];
+                reuseIdentifier:CellIdentifier
+                ];
     }
     
-    
+    cell.autoresizesSubviews = YES;
     
     Lavori *currentCell = [MessaggiListData objectAtIndex:indexPath.row];
     
     //  Fill in the cell contents
     
     cell.makeLabel.text = [currentCell title];
+    cell.makeLabel.autoresizesSubviews = YES;
 //    cell.modelLabel.text = [currentCell description_];
     cell.modelLabel.text = [currentCell title];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -401,18 +409,17 @@ NSString *caricaDatiAGG = @"0";
     cell.luogo.text = @"";
     cell.MessaggiImage.contentMode = UIViewContentModeScaleAspectFit;
    // cell.MessaggiImage.image = [UIImage imageWithData:[currentCell smallpicture]];
-
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
-*/
+
 
 /*
 // Override to support editing the table view.

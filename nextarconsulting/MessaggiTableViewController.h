@@ -32,7 +32,6 @@ IBOutlet UISegmentedControl *Segment;
 @property (nonatomic, strong) NSMutableArray *MessaggiLink1;
  
 @property (nonatomic, retain) IBOutlet UISegmentedControl *Segment;
-@property (nonatomic, retain) IBOutlet UILabel  *LblAttesa;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) Lavori *currentMessaggi;
 @property (strong, nonatomic) NSMutableArray *MessaggiListData;
