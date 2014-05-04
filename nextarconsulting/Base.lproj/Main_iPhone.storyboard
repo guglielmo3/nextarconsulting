@@ -17,7 +17,6 @@
                     <connections>
                         <segue destination="yCu-CS-LSC" kind="relationship" relationship="viewControllers" id="OYD-8i-4JJ"/>
                         <segue destination="jcr-rk-lVi" kind="relationship" relationship="viewControllers" id="23K-2c-HOZ"/>
-                        <segue destination="Gfi-T8-Z7V" kind="relationship" relationship="viewControllers" id="Fqg-Q2-SMn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCT-4d-6Vb" sceneMemberID="firstResponder"/>
@@ -212,10 +211,10 @@
             </objects>
             <point key="canvasLocation" x="897" y="-685"/>
         </scene>
-        <!--Contattaci - Nextar Consulting-->
+        <!--Contattaci Map - Nextar Consulting-->
         <scene sceneID="X1d-dZ-Jig">
             <objects>
-                <viewController wantsFullScreenLayout="YES" id="oK1-wR-sdV" customClass="Contattaci" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="oK1-wR-sdV" customClass="ContattaciMap" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Zj-eT-DT4"/>
                         <viewControllerLayoutGuide type="bottom" id="Rz7-gL-EPt"/>
@@ -223,9 +222,65 @@
                     <view key="view" contentMode="scaleToFill" id="yDF-Gg-XYg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="Mappa" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iWR-7K-04p">
+                                <rect key="frame" x="0.0" y="64" width="320" height="261"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Le nostri sedi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APd-9n-UJa">
+                                <rect key="frame" x="5" y="333" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRW-fx-oD7">
+                                <rect key="frame" x="20" y="355" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Torino">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Torino:" destination="oK1-wR-sdV" eventType="touchUpInside" id="YSf-zU-Hnv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqk-ip-l0a">
+                                <rect key="frame" x="131" y="355" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Roma">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Roma:" destination="oK1-wR-sdV" eventType="touchUpInside" id="IN5-GR-pvQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usc-nF-qCN">
+                                <rect key="frame" x="242" y="355" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="UK">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Uk:" destination="oK1-wR-sdV" eventType="touchUpInside" id="dbM-7M-edC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiR-x5-jrq">
+                                <rect key="frame" x="91" y="454" width="121" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Mandaci un'email">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mail:" destination="oK1-wR-sdV" eventType="touchUpInside" id="CBy-R1-z6H"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nextar Consulting" id="Aao-bO-bLY"/>
+                    <connections>
+                        <outlet property="mapView" destination="iWR-7K-04p" id="2G7-9p-KAX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5z-7s-VVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -397,6 +452,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wyV-vW-nXf"/>
+        <segue reference="e2E-nq-YjN"/>
     </inferredMetricsTieBreakers>
 </document>

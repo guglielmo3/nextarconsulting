@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F0375D31914FE5C0083A38B /* AggiornaMessaggi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0375D11914FE5C0083A38B /* AggiornaMessaggi.m */; };
+		2F0375D9191632440083A38B /* ContattaciMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0375D8191632440083A38B /* ContattaciMap.m */; };
 		2F0B562718E87AEF00EA0D20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562618E87AEF00EA0D20 /* Foundation.framework */; };
 		2F0B562918E87AEF00EA0D20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562818E87AEF00EA0D20 /* CoreGraphics.framework */; };
 		2F0B562B18E87AEF00EA0D20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562A18E87AEF00EA0D20 /* UIKit.framework */; };
@@ -49,6 +50,8 @@
 /* Begin PBXFileReference section */
 		2F0375D11914FE5C0083A38B /* AggiornaMessaggi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AggiornaMessaggi.m; sourceTree = "<group>"; };
 		2F0375D21914FE5C0083A38B /* AggiornaMessaggi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AggiornaMessaggi.h; sourceTree = "<group>"; };
+		2F0375D7191632440083A38B /* ContattaciMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContattaciMap.h; sourceTree = "<group>"; };
+		2F0375D8191632440083A38B /* ContattaciMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContattaciMap.m; sourceTree = "<group>"; };
 		2F0B562318E87AEE00EA0D20 /* nextarconsulting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nextarconsulting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0B562618E87AEF00EA0D20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2F0B562818E87AEF00EA0D20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -189,6 +192,8 @@
 				2F0B563618E87AEF00EA0D20 /* AppDelegate.m */,
 				2F0B564418E87AEF00EA0D20 /* Images.xcassets */,
 				2F0B562D18E87AEF00EA0D20 /* Supporting Files */,
+				2F0375D7191632440083A38B /* ContattaciMap.h */,
+				2F0375D8191632440083A38B /* ContattaciMap.m */,
 			);
 			path = nextarconsulting;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				2F5EEFC218F58E93003CF4D2 /* DettaglioMessaggi.m in Sources */,
 				2F5EEF9318F58B89003CF4D2 /* CoreDataHelper.m in Sources */,
 				2F5EEFC018F58E93003CF4D2 /* MessaggiTableViewController.m in Sources */,
+				2F0375D9191632440083A38B /* ContattaciMap.m in Sources */,
 				2F8D542D18F5C36B00C6E5A9 /* Model.xcdatamodeld in Sources */,
 				2F5EEFCF18F58E93003CF4D2 /* CheckConnessione.m in Sources */,
 			);
