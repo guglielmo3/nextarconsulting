@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C1021" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CampiVisibili" representedClassName="CampiVisibili" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="closing_date" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="company" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="department" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="education" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="job_code" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="job_description" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="job_title" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="loc_address" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="loc_description" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="pay_range" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="pay_rate" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="posting_date" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="preferred_skills" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="progressivo" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="shift" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="travel" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
     <entity name="Lavori" representedClassName="Lavori" syncable="YES">
         <attribute name="datapubblicazione" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="description_" optional="YES" attributeType="String" syncable="YES"/>
@@ -7,7 +31,33 @@
         <attribute name="progressivo" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="LavoriCompleta" representedClassName="LavoriCompleta" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="closing_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="department" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="education" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="job_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="job_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="job_title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loc_address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loc_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pay_range" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pay_rate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="posting_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="preferred_skills" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="progressivo" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="shift" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="travel" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Lavori" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="LavoriCompleta" positionX="-63" positionY="18" width="128" height="373"/>
+        <element name="CampiVisibili" positionX="-36" positionY="153" width="128" height="373"/>
     </elements>
 </model>
