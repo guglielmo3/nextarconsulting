@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "Lavori.h"
+#import "LavoriCompleta.h"
 
 
 @interface AggiornaMessaggi : NSObject
@@ -34,7 +34,7 @@
 @property (nonatomic, retain) IBOutlet UIButton  *btnAggiornaDocumenti;
 @property (nonatomic, retain) IBOutlet UIButton  *btnAggiornaVideo;
 
-@property (strong, nonatomic) NSMutableArray *MessaggiListData;
+/*@property (strong, nonatomic) NSMutableArray *MessaggiListData;
 @property (strong, nonatomic) NSMutableArray *FotoListData;
 @property (strong, nonatomic) NSMutableArray *DocumentiListData;
 @property (strong, nonatomic) NSMutableArray *VideoListData;
@@ -45,9 +45,33 @@
 
 @property (nonatomic, strong) NSMutableArray *MAFotoAnno;
 @property (nonatomic, strong) NSMutableArray *MADocumentiAnno;
-@property (nonatomic, strong) NSMutableArray *MAvideoAnno;
+@property (nonatomic, strong) NSMutableArray *MAvideoAnno;*/
 
-@property (strong, nonatomic) Lavori *currentMessaggi;
+@property (nonatomic, strong) NSMutableArray *Messaggititle;
+@property (nonatomic, strong) NSMutableArray *Messaggilink;
+@property (nonatomic, strong) NSMutableArray *Messaggicompany;
+@property (nonatomic, strong) NSMutableArray *Messaggijob_title;
+@property (nonatomic, strong) NSMutableArray *Messaggilocation;
+@property (nonatomic, strong) NSMutableArray *Messaggiloc_description;
+@property (nonatomic, strong) NSMutableArray *Messaggiloc_address;
+@property (nonatomic, strong) NSMutableArray *Messaggisummary;
+@property (nonatomic, strong) NSMutableArray *Messaggiposting_date;
+@property (nonatomic, strong) NSMutableArray *Messaggiclosing_date;
+@property (nonatomic, strong) NSMutableArray *Messaggijob_code;
+@property (nonatomic, strong) NSMutableArray *Messaggicategory;
+@property (nonatomic, strong) NSMutableArray *Messaggidepartment;
+@property (nonatomic, strong) NSMutableArray *Messaggishift;
+@property (nonatomic, strong) NSMutableArray *Messaggieducation;
+@property (nonatomic, strong) NSMutableArray *Messaggipay_rate;
+@property (nonatomic, strong) NSMutableArray *Messaggipay_range;
+@property (nonatomic, strong) NSMutableArray *Messaggiduration;
+@property (nonatomic, strong) NSMutableArray *Messaggitravel;
+@property (nonatomic, strong) NSMutableArray *Messaggijob_description;
+@property (nonatomic, strong) NSMutableArray *Messaggipreferred_skills;
+
+
+
+@property (strong, nonatomic) LavoriCompleta *currentMessaggi;
 
 @property (nonatomic, retain) NSMutableArray *AnniMutableArray;
 

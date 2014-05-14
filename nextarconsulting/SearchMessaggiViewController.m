@@ -12,7 +12,8 @@
 #import "DettaglioMessaggi.h"
 #import "CoreDataHelper.h"
 #import "AppDelegate.h"
-#import "Lavori.h"
+//#import "Lavori.h"
+#import "LavoriCompleta.h"
 
 @interface SearchMessaggiViewController ()
 
@@ -102,12 +103,12 @@
     
     
     
-    Lavori *currentCell = [MessaggiListData objectAtIndex:indexPath.row];
+    LavoriCompleta *currentCell = [MessaggiListData objectAtIndex:indexPath.row];
     
     //  Fill in the cell contents
     
-    cell.makeLabel.text = [currentCell title];
-    cell.modelLabel.text = [currentCell title];
+    cell.job_title.text = [currentCell job_title];
+    cell.job_description.text = [currentCell job_description];
     
     
     return cell;
@@ -180,9 +181,9 @@
     
     
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"(title CONTAINS[cd] %@)",searchText];
-    if ([CoreDataHelper countForEntity:@"Lavori" withPredicate:pred andContext:managedObjectContext] != 0)
+    if ([CoreDataHelper countForEntity:@"LavoriCompleta" withPredicate:pred andContext:managedObjectContext] != 0)
     {
-        MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"Lavori" withPredicate:pred andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
+        MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"LavoriCompleta" withPredicate:pred andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
         int app = MessaggiListData.count;
         int ciclo = 0;
         

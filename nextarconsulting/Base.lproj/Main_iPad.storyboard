@@ -100,7 +100,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1387" y="-765"/>
+            <point key="canvasLocation" x="1939" y="-1405"/>
         </scene>
         <!--Dettaglio Messaggi - Nextar Consulting-->
         <scene sceneID="BKC-Rw-pS6">
@@ -188,7 +188,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1860" y="-708"/>
+            <point key="canvasLocation" x="4748" y="-1204"/>
         </scene>
         <!--Navigation Controller - Messaggi-->
         <scene sceneID="tZJ-46-YY8">
@@ -209,7 +209,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJ5-i6-YIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="-685"/>
+            <point key="canvasLocation" x="385" y="-2453"/>
         </scene>
         <!--Contattaci Map - Nextar Consulting-->
         <scene sceneID="n6m-m8-9LE">
@@ -228,14 +228,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Le nostri sedi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H91-lH-O4M">
-                                <rect key="frame" x="5" y="333" width="103" height="21"/>
+                                <rect key="frame" x="266" y="796" width="103" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tko-jc-HbF">
-                                <rect key="frame" x="20" y="355" width="42" height="30"/>
+                                <rect key="frame" x="266" y="825" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Torino">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -245,7 +245,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctn-ko-2YK">
-                                <rect key="frame" x="131" y="355" width="41" height="30"/>
+                                <rect key="frame" x="377" y="825" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Roma">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -255,7 +255,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZ9-tX-psG">
-                                <rect key="frame" x="242" y="355" width="30" height="30"/>
+                                <rect key="frame" x="488" y="825" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="UK">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -265,7 +265,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl5-qx-sfd">
-                                <rect key="frame" x="91" y="454" width="121" height="30"/>
+                                <rect key="frame" x="337" y="912" width="121" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Mandaci un'email">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -284,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFC-2R-EFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1343" y="223"/>
+            <point key="canvasLocation" x="2671" y="151"/>
         </scene>
         <!--Navigation Controller - Contattaci-->
         <scene sceneID="9mn-h3-PVO">
@@ -301,7 +301,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wul-3a-aRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801" y="223"/>
+            <point key="canvasLocation" x="1369" y="-281"/>
         </scene>
         <!--Search Messaggi View Controller - Nextar Consulting-->
         <scene sceneID="98H-3G-UQc">
@@ -380,7 +380,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1719" y="-1301"/>
+            <point key="canvasLocation" x="3535" y="-2381"/>
         </scene>
         <!--Aggiorna - Nextar Consulting-->
         <scene sceneID="GJD-c0-wD0">
@@ -421,7 +421,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgd-Gr-5IB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1471" y="1265"/>
+            <point key="canvasLocation" x="2335" y="1457"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F9X-Qi-o9V">
@@ -438,7 +438,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z02-y0-fvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="1064"/>
+            <point key="canvasLocation" x="1279" y="1296"/>
         </scene>
     </scenes>
     <resources>

@@ -24,6 +24,7 @@
 		2F0B565618E87AEF00EA0D20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B565418E87AEF00EA0D20 /* InfoPlist.strings */; };
 		2F0B565818E87AEF00EA0D20 /* nextarconsultingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B565718E87AEF00EA0D20 /* nextarconsultingTests.m */; };
 		2F2B2C1318EDD830009F9AE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2B2C1218EDD830009F9AE9 /* MapKit.framework */; };
+		2F4398251923E3E400FFA12E /* Parametri.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4398241923E3E400FFA12E /* Parametri.m */; };
 		2F5EEF9318F58B89003CF4D2 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9218F58B89003CF4D2 /* CoreDataHelper.m */; };
 		2F5EEFC018F58E93003CF4D2 /* MessaggiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9518F58E93003CF4D2 /* MessaggiTableViewController.m */; };
 		2F5EEFC118F58E93003CF4D2 /* MessaggiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9718F58E93003CF4D2 /* MessaggiTableViewCell.m */; };
@@ -35,6 +36,8 @@
 		2F5EEFDC18F5A5CA003CF4D2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFDB18F5A5CA003CF4D2 /* Reachability.m */; };
 		2F8D542D18F5C36B00C6E5A9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D542B18F5C36B00C6E5A9 /* Model.xcdatamodeld */; };
 		2F8D543018F5C4E800C6E5A9 /* Lavori.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D542F18F5C4E800C6E5A9 /* Lavori.m */; };
+		2F94D9BE1921278D00749D45 /* LavoriCompleta.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F94D9BD1921278D00749D45 /* LavoriCompleta.m */; };
+		2F94D9C11921278D00749D45 /* CampiVisibili.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F94D9C01921278D00749D45 /* CampiVisibili.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,8 @@
 		2F2B2C1918EDDD78009F9AE9 /* 4040.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4040.png; sourceTree = "<group>"; };
 		2F2B2C1A18EDDD82009F9AE9 /* 5858.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5858.png; sourceTree = "<group>"; };
 		2F2B2C1B18EDDD8D009F9AE9 /* 2929.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2929.png; sourceTree = "<group>"; };
+		2F4398231923E3E400FFA12E /* Parametri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parametri.h; sourceTree = "<group>"; };
+		2F4398241923E3E400FFA12E /* Parametri.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parametri.m; sourceTree = "<group>"; };
 		2F5EEF9118F58B89003CF4D2 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		2F5EEF9218F58B89003CF4D2 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		2F5EEF9418F58E93003CF4D2 /* MessaggiTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessaggiTableViewController.h; sourceTree = "<group>"; };
@@ -100,6 +105,10 @@
 		2F8D542C18F5C36B00C6E5A9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2F8D542E18F5C4E800C6E5A9 /* Lavori.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lavori.h; sourceTree = "<group>"; };
 		2F8D542F18F5C4E800C6E5A9 /* Lavori.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lavori.m; sourceTree = "<group>"; };
+		2F94D9BC1921278D00749D45 /* LavoriCompleta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LavoriCompleta.h; sourceTree = "<group>"; };
+		2F94D9BD1921278D00749D45 /* LavoriCompleta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LavoriCompleta.m; sourceTree = "<group>"; };
+		2F94D9BF1921278D00749D45 /* CampiVisibili.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampiVisibili.h; sourceTree = "<group>"; };
+		2F94D9C01921278D00749D45 /* CampiVisibili.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampiVisibili.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +190,8 @@
 				2F5EEFB018F58E93003CF4D2 /* SearchMessaggiViewController.h */,
 				2F5EEFB118F58E93003CF4D2 /* SearchMessaggiViewController.m */,
 				2F5EEFB218F58E93003CF4D2 /* CheckConnessione.h */,
-				2F0375D21914FE5C0083A38B /* AggiornaMessaggi.h */,
 				2F5EEFB318F58E93003CF4D2 /* CheckConnessione.m */,
+				2F0375D21914FE5C0083A38B /* AggiornaMessaggi.h */,
 				2F0375D11914FE5C0083A38B /* AggiornaMessaggi.m */,
 				2F5EEFB418F58E93003CF4D2 /* Contattaci.h */,
 				2F5EEFB518F58E93003CF4D2 /* Contattaci.m */,
@@ -194,6 +203,8 @@
 				2F0B562D18E87AEF00EA0D20 /* Supporting Files */,
 				2F0375D7191632440083A38B /* ContattaciMap.h */,
 				2F0375D8191632440083A38B /* ContattaciMap.m */,
+				2F4398231923E3E400FFA12E /* Parametri.h */,
+				2F4398241923E3E400FFA12E /* Parametri.m */,
 			);
 			path = nextarconsulting;
 			sourceTree = "<group>";
@@ -235,6 +246,10 @@
 				2F5EEF9118F58B89003CF4D2 /* CoreDataHelper.h */,
 				2F5EEF9218F58B89003CF4D2 /* CoreDataHelper.m */,
 				2F8D542B18F5C36B00C6E5A9 /* Model.xcdatamodeld */,
+				2F94D9BF1921278D00749D45 /* CampiVisibili.h */,
+				2F94D9C01921278D00749D45 /* CampiVisibili.m */,
+				2F94D9BC1921278D00749D45 /* LavoriCompleta.h */,
+				2F94D9BD1921278D00749D45 /* LavoriCompleta.m */,
 				2F8D542E18F5C4E800C6E5A9 /* Lavori.h */,
 				2F8D542F18F5C4E800C6E5A9 /* Lavori.m */,
 			);
@@ -372,10 +387,13 @@
 				2F5EEFD118F58E93003CF4D2 /* Aggiorna.m in Sources */,
 				2F0B563318E87AEF00EA0D20 /* main.m in Sources */,
 				2F5EEFD018F58E93003CF4D2 /* Contattaci.m in Sources */,
+				2F94D9C11921278D00749D45 /* CampiVisibili.m in Sources */,
 				2F5EEFC218F58E93003CF4D2 /* DettaglioMessaggi.m in Sources */,
 				2F5EEF9318F58B89003CF4D2 /* CoreDataHelper.m in Sources */,
 				2F5EEFC018F58E93003CF4D2 /* MessaggiTableViewController.m in Sources */,
 				2F0375D9191632440083A38B /* ContattaciMap.m in Sources */,
+				2F94D9BE1921278D00749D45 /* LavoriCompleta.m in Sources */,
+				2F4398251923E3E400FFA12E /* Parametri.m in Sources */,
 				2F8D542D18F5C36B00C6E5A9 /* Model.xcdatamodeld in Sources */,
 				2F5EEFCF18F58E93003CF4D2 /* CheckConnessione.m in Sources */,
 			);

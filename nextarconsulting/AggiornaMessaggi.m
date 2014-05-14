@@ -8,7 +8,8 @@
 
 #import "AggiornaMessaggi.h"
 #import "CoreDataHelper.h"
-#import "Lavori.h"
+#import "LavoriCompleta.h"
+#import "Parametri.h"
 
 @implementation AggiornaMessaggi
 
@@ -27,10 +28,27 @@ NSString *caricaDatiAggiorna = @"0";
     
     AnniMutableArray = [[NSMutableArray alloc] init];
     AnniTotaleMutableArray = [[NSMutableArray alloc] init];
-    _MessaggiModels = [[NSMutableArray alloc] init];
-    _MessaggiMakes = [[NSMutableArray alloc] init];
-    _MessaggiImages = [[NSMutableArray alloc] init];
-    _MessaggiDataPubblicazione = [[NSMutableArray alloc] init];
+    _Messaggicategory = [[NSMutableArray alloc] init];
+    _Messaggiclosing_date  = [[NSMutableArray alloc] init];
+    _Messaggicompany = [[NSMutableArray alloc] init];
+    _Messaggidepartment = [[NSMutableArray alloc] init];
+    _Messaggiduration = [[NSMutableArray alloc] init];
+    _Messaggieducation = [[NSMutableArray alloc] init];
+    _Messaggijob_code = [[NSMutableArray alloc] init];
+    _Messaggijob_description = [[NSMutableArray alloc] init];
+    _Messaggijob_title = [[NSMutableArray alloc] init];
+    _Messaggilink = [[NSMutableArray alloc] init];
+    _Messaggiloc_address = [[NSMutableArray alloc] init];
+    _Messaggiloc_description = [[NSMutableArray alloc] init];
+    _Messaggilocation = [[NSMutableArray alloc] init];
+    _Messaggipay_range = [[NSMutableArray alloc] init];
+    _Messaggipay_rate = [[NSMutableArray alloc] init];
+    _Messaggiposting_date = [[NSMutableArray alloc] init];
+    _Messaggipreferred_skills = [[NSMutableArray alloc] init];
+    _Messaggishift = [[NSMutableArray alloc] init];
+    _Messaggisummary = [[NSMutableArray alloc] init];
+    _Messaggititle = [[NSMutableArray alloc] init];
+    _Messaggitravel = [[NSMutableArray alloc] init];
     contenutoTag = [[NSMutableString alloc] init];
 
     
@@ -56,9 +74,10 @@ NSString *caricaDatiAggiorna = @"0";
         n++;
     }
     */
+    Parametri *web_service = [Parametri alloc];
     
     
-    NSString *path = @"http://www.nextarconsulting.com/index.php?option=com_jobgroklist&view=postings&format=feed&type=rss";
+    NSString *path = web_service.Web_Service;
     NSURL *url = [NSURL URLWithString:path];
     NSXMLParser *parser =[[NSXMLParser alloc] initWithContentsOfURL:url];
     tipoRichiesta = @"rss";
@@ -70,7 +89,7 @@ NSString *caricaDatiAggiorna = @"0";
     int tempNum;
     
     
-    [ CoreDataHelper deleteAllObjectsForEntity:@"Lavori" withPredicate:nil andContext:_managedObjectContext];
+    [ CoreDataHelper deleteAllObjectsForEntity:@"LavoriCompleta" withPredicate:nil andContext:_managedObjectContext];
     
     
     
@@ -96,22 +115,45 @@ NSString *caricaDatiAggiorna = @"0";
 -(void) gestiscidaticore
 {
     
-    [CoreDataHelper deleteAllObjectsForEntity:@"Lavori" withPredicate:nil andContext:_managedObjectContext];
+    [CoreDataHelper deleteAllObjectsForEntity:@"LavoriCompleta" withPredicate:nil andContext:_managedObjectContext];
     
-    int app0 = self.MessaggiMakes.count;
+    int app0 = self.Messaggijob_title.count;
     int ciclo0 = 0;
     
     while (ciclo0 <= (app0 -1)) {
-        self.currentMessaggi = (Lavori *)[NSEntityDescription insertNewObjectForEntityForName:@"Lavori" inManagedObjectContext:self.managedObjectContext];
+        self.currentMessaggi = (LavoriCompleta *)[NSEntityDescription insertNewObjectForEntityForName:@"LavoriCompleta" inManagedObjectContext:self.managedObjectContext];
         
         // For both new and existing pictures, fill in the details from the form
         NSNumber *prganno = [NSNumber numberWithInt:ciclo0];
+        
         [self.currentMessaggi setProgressivo:prganno];
-        [self.currentMessaggi setTitle:[self.MessaggiMakes objectAtIndex:ciclo0]];
-        [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
-        [self.currentMessaggi setLink:[self.MessaggiImages objectAtIndex:ciclo0]];
-        [self.currentMessaggi setDatapubblicazione:[self.MessaggiDataPubblicazione objectAtIndex:ciclo0]];
- 
+        [self.currentMessaggi setJob_title:[self.Messaggijob_title objectAtIndex:ciclo0]];
+        [self.currentMessaggi setJob_description:[self.Messaggijob_description objectAtIndex:ciclo0]];
+        [self.currentMessaggi setLink:[self.Messaggilink objectAtIndex:ciclo0]];
+        [self.currentMessaggi setPosting_date:[self.Messaggiposting_date objectAtIndex:ciclo0]];
+        [self.currentMessaggi setCategory:[self.Messaggicategory objectAtIndex:ciclo0]];
+        
+        
+        //Riempio gli array con il contenuto della cella
+        [self.currentMessaggi setClosing_date:[self.Messaggiclosing_date  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setCompany:[self.Messaggicompany  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setDepartment:[self.Messaggidepartment  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setDuration:[self.Messaggiduration  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setEducation:[self.Messaggieducation  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setJob_code:[self.Messaggijob_code  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setJob_description:[self.Messaggijob_description  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setLoc_address:[self.Messaggiloc_address  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setLoc_description:[self.Messaggiloc_description  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setLocation:[self.Messaggilocation  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setPay_range:[self.Messaggipay_range  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setPay_rate:[self.Messaggipay_rate  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setPosting_date:[self.Messaggiposting_date  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setPreferred_skills:[self.Messaggipreferred_skills  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setShift:[self.Messaggishift  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setSummary:[self.Messaggisummary  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setTitle:[self.Messaggititle  objectAtIndex:ciclo0]];
+        [self.currentMessaggi setTravel:[self.Messaggitravel  objectAtIndex:ciclo0]];
+
         ciclo0 = ciclo0 +1;
         //  Commit item to core data
         NSError *error;
@@ -152,7 +194,7 @@ NSString *caricaDatiAggiorna = @"0";
     
     NSRange r;
     
-    
+  /*
     if ([tipoRichiesta isEqualToString:@"atom"])
     {
         
@@ -234,6 +276,8 @@ NSString *caricaDatiAggiorna = @"0";
             {
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 [dateFormatter setDateFormat:@"dd MMM yyyy"];
+                NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier: @"en_EN"];
+                [dateFormatter setLocale:locale];
                 NSDate *dateFromString = [[NSDate alloc] init];
                 // voila!
                 NSString *value = [immutableString substringWithRange:NSMakeRange(5, 11)];
@@ -243,6 +287,152 @@ NSString *caricaDatiAggiorna = @"0";
             }
             
         }
+        
+    }
+    */
+    if([elementName isEqualToString:@"category"])
+    {
+        caricaDatiAggiorna = @"1";
+    }
+    
+    if([caricaDatiAggiorna isEqualToString:@"1"])
+    {
+      /*  if ([elementName isEqualToString:@"title"]) {
+            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+            NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+            noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            
+            
+            [_MessaggiMakes addObject:noWhiteSpace];
+        }
+        
+        if ([elementName isEqualToString:@"job_description"]) {
+            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+            
+            [_MessaggiModels addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"link"]) {
+            [_MessaggiImages addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"posting_date"])
+        {
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"dd MMM yyyy"];
+            NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier: @"en_EN"];
+            [dateFormatter setLocale:locale];
+            NSDate *dateFromString = [[NSDate alloc] init];
+            // voila!
+            NSString *value = [immutableString substringWithRange:NSMakeRange(5, 11)];
+            dateFromString = [dateFormatter dateFromString:value];
+            [_MessaggiDataPubblicazione addObject:dateFromString];
+            
+        }
+       */
+        if ([elementName isEqualToString:@"title"]) {
+            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+            NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+            noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            
+            
+            [_Messaggititle addObject:noWhiteSpace];
+        }
+        
+        
+        
+        if ([elementName isEqualToString:@"link"]) {
+            [_Messaggilink addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"company"]) {
+            [_Messaggicompany addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"job_title"]) {
+            [_Messaggijob_title addObject:immutableString];
+        }
+        
+        
+        if ([elementName isEqualToString:@"location"]) {
+            [_Messaggilocation addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"loc_description"]) {
+            [_Messaggiloc_description addObject:immutableString];
+        }
+        if ([elementName isEqualToString:@"loc_address"]) {
+            [_Messaggiloc_address addObject:immutableString];
+        }
+        if ([elementName isEqualToString:@"summary"]) {
+            [_Messaggisummary addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"posting_date"]) {
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+            NSDate *dateFromString = [[NSDate alloc] init];
+            // voila!
+            NSString *value = [immutableString substringWithRange:NSMakeRange(0, 10)];
+            dateFromString = [dateFormatter dateFromString:value];
+            [_Messaggiposting_date addObject:dateFromString];
+        }
+        if ([elementName isEqualToString:@"closing_date"]) {
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+            NSDate *dateFromString = [[NSDate alloc] init];
+            // voila!
+            NSString *value = [immutableString substringWithRange:NSMakeRange(0, 10)];
+            dateFromString = [dateFormatter dateFromString:value];
+            [_Messaggiclosing_date addObject:dateFromString];
+        }
+        
+        if ([elementName isEqualToString:@"job_code"]) {
+            [_Messaggijob_code addObject:immutableString];
+        }
+        if ([elementName isEqualToString:@"category"]) {
+            [_Messaggicategory addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"department"]) {
+            [_Messaggidepartment addObject:immutableString];
+        }
+        if ([elementName isEqualToString:@"shift"]) {
+            [_Messaggishift addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"education"]) {
+            [_Messaggieducation addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"pay_rate"]) {
+            [_Messaggipay_rate addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"pay_range"]) {
+            [_Messaggipay_range addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"duration"]) {
+            [_Messaggiduration addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"travel"]) {
+            [_Messaggitravel addObject:immutableString];
+        }
+        if ([elementName isEqualToString:@"job_description"]) {
+            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+            [_Messaggijob_description addObject:immutableString];
+        }
+        
+        if ([elementName isEqualToString:@"preferred_skills"]) {
+            [_Messaggipreferred_skills addObject:immutableString];
+        }
+
         
     }
     

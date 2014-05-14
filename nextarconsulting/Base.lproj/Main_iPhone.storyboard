@@ -68,9 +68,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.60559381909999999" blue="0.081154367229999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="datapubb" destination="9xU-wj-SIh" id="F0I-qK-3jI"/>
-                                    <outlet property="luogo" destination="bPc-Dy-dAs" id="C3k-4f-xCb"/>
-                                    <outlet property="modelLabel" destination="fMG-Gi-5mW" id="nQW-Hh-Heq"/>
+                                    <outlet property="job_description" destination="fMG-Gi-5mW" id="5OL-Cl-hAc"/>
+                                    <outlet property="location" destination="bPc-Dy-dAs" id="ge0-nt-f2s"/>
+                                    <outlet property="posting_date" destination="9xU-wj-SIh" id="6Vg-Eq-ebK"/>
                                     <segue destination="xb4-GD-gVH" kind="push" identifier="ShowMessaggiDetails" id="e2E-nq-YjN"/>
                                 </connections>
                             </tableViewCell>
