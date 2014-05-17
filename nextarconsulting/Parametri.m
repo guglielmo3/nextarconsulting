@@ -14,5 +14,17 @@
 {
     return @"http://nextar.co.uk/test/joomla3/index.php/jobgrok-premium/postings?format=app&type=rss";
 }
+-(NSString *)EmailContattaci
+{
+    return @"mailto:sales@nextarconsulting.com?subject=Contattaci - Nextar";
+}
+-(NSString *)EmailSubject
+{
+    return @"mailto:sales@nextarconsulting.com?subject=Contattaci - Nextar";
+}
+-(NSString *)SoloEmail
+{
+    return @"sales@nextarconsulting.com";
+}
 
 @end

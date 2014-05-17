@@ -10,6 +10,7 @@
 
 @implementation ContattaciMap
 
+Parametri *parametri;
 
 
 - (void)viewDidLoad
@@ -136,7 +137,7 @@
         // earlier versions of the iPhone OS.
         // We display an email composition interface if MFMailComposeViewController exists and the device can send emails.
         // We launch the Mail application on the device, otherwise.
-        
+    
         Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
         if (mailClass != nil)
         {
@@ -147,13 +148,13 @@
             }
             else
             {
-                [self launchMailAppOnDevice: (@"mailto:sales@nextarconsulting.com?subject=Contattaci - Nextar")];
+                [self launchMailAppOnDevice: (parametri.EmailContattaci)];
 
             }
         }
         else
         {
-            [self launchMailAppOnDevice :(@"mailto:sales@nextarconsulting.com?subject=Contattaci - Nextar")];
+            [self launchMailAppOnDevice :(parametri.EmailContattaci)];
         }
 
 }
@@ -162,12 +163,12 @@
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
 	
-	[picker setSubject:@"Contattaci - Nextar"];
+	[picker setSubject:parametri.EmailSubject];
 	
     
 	// Set up recipients
 	//NSArray *toRecipients = [NSArray arrayWithObject:@"info@SaverioGaeta.it"];
-	NSArray *toRecipients = [NSArray arrayWithObject:@"sales@nextarconsulting.com"];
+	NSArray *toRecipients = [NSArray arrayWithObject:parametri.SoloEmail];
 	//NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com", @"third@example.com", nil];
     //	NSArray *bccRecipients = [NSArray arrayWithObject:@"fourth@example.com"];
 	
@@ -189,7 +190,7 @@
 // Launches the Mail application on the device.
 -(void)launchMailAppOnDevice :(NSString *) NSSreceipt
 {
-	NSString *recipients = @"mailto:sales@nextarconsulting.com?subject=Contattaci - Nextar";
+	NSString *recipients = parametri.EmailContattaci;
 	NSString *body = @"&body=";
 	
 	NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];

@@ -13,6 +13,9 @@
 
 
 -(NSString *)Web_Service;
+-(NSString *)EmailContattaci;
+-(NSString *)EmailSubject;
+-(NSString *)SoloEmail;
 
 
 @end

@@ -7,9 +7,10 @@
 //
 
 #import "Contattaci.h"
+#import "Parametri.h"
 
 @implementation Contattaci
-
+Parametri *parametri;
 
 @synthesize message;
 
@@ -36,12 +37,12 @@
 		}
 		else
 		{
-			[self launchMailAppOnDevice: (@"mailto:info@SaverioGaeta.it?subject=Contattaci - Medjugorje")];
+			[self launchMailAppOnDevice: (parametri.EmailContattaci)];
 		}
 	}
 	else
 	{
-		[self launchMailAppOnDevice :(@"mailto:info@SaverioGaeta.it?subject=Contattaci - Medjugorje")];
+		[self launchMailAppOnDevice :(parametri.EmailContattaci)];
 	}
 }
 
@@ -64,12 +65,12 @@
 		}
 		else
 		{
-			[self launchMailAppOnDevice :@"mailto:francesco@egioiasia.com?subject=Contattaci - Medjugorje iOS"];
+			[self launchMailAppOnDevice :parametri.EmailContattaci];
 		}
 	}
 	else
 	{
-		[self launchMailAppOnDevice :@"mailto:francesco@egioiasia.com?subject=Contattaci - Medjugorje iOS"];
+		[self launchMailAppOnDevice :parametri.EmailContattaci];
 	}
 }
 
@@ -83,12 +84,12 @@
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
 	
-	[picker setSubject:@"Contattaci - Medjugorje"];
+	[picker setSubject:parametri.EmailSubject];
 	
     
 	// Set up recipients
 	//NSArray *toRecipients = [NSArray arrayWithObject:@"info@SaverioGaeta.it"];
-	NSArray *toRecipients = [NSArray arrayWithObject:@"info@SaverioGaeta.it"];
+	NSArray *toRecipients = [NSArray arrayWithObject:parametri.SoloEmail];
 	//NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com", @"third@example.com", nil];
 //	NSArray *bccRecipients = [NSArray arrayWithObject:@"fourth@example.com"]; 
 	
@@ -112,12 +113,12 @@
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
 	
-	[picker setSubject:@"Contattaci - Medjugorje"];
+	[picker setSubject:parametri.EmailSubject];
 	
     
 	// Set up recipients
 	//NSArray *toRecipients = [NSArray arrayWithObject:@"info@SaverioGaeta.it"];
-	NSArray *toRecipients = [NSArray arrayWithObject:@"francesco@egioiasia.com"];
+	NSArray *toRecipients = [NSArray arrayWithObject:parametri.SoloEmail];
 	//NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com", @"third@example.com", nil];
     //	NSArray *bccRecipients = [NSArray arrayWithObject:@"fourth@example.com"];
 	
@@ -171,7 +172,7 @@
 // Launches the Mail application on the device.
 -(void)launchMailAppOnDevice :(NSString *) NSSreceipt
 {
-	NSString *recipients = @"mailto:info@SaverioGaeta.it?subject=Contattaci - Medjugorje Lite";
+	NSString *recipients = parametri.EmailContattaci;
 	NSString *body = @"&body=";
 	
 	NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];

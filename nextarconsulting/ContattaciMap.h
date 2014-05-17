@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "Parametri.h"
 
 
 @interface ContattaciMap : UIViewController <MKMapViewDelegate,MFMailComposeViewControllerDelegate>

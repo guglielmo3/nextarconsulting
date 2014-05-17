@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "Parametri.h"
 
 @class Email;
 
