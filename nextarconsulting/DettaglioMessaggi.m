@@ -9,28 +9,52 @@
 #import "DettaglioMessaggi.h"
 #import "CheckConnessione.h"
 #import "CoreDataHelper.h"
+#import "Parametri.h"
 
 
 
 //static NSString* kAppId = @"311313092281732";
 
-static NSString* kAppId = @"152139888244542";
+
 
 @interface DettaglioMessaggi ()
 {
 }
 @end
 //@implementation AppDelegate
+Parametri *parametri;
 
 @implementation DettaglioMessaggi
 
-@synthesize makeLabel = _makeLabel;
+/*@synthesize makeLabel = _makeLabel;
 @synthesize modelLabel = _modelLabel;
 @synthesize imageView = _imageView;
+
+
+@synthesize messaggioesteso = _messaggioesteso;*/
 @synthesize MessaggiDetailModel = _MessaggiDetailModel;
-@synthesize messaggioesteso = _messaggioesteso;
-@synthesize messaggioesteso1 = _messaggioesteso1;
-@synthesize messaggioesteso2 = _messaggioesteso2;
+
+@synthesize link = _link;
+@synthesize company = _company;
+@synthesize job_title = _job_title;
+@synthesize location = _location;
+@synthesize loc_description = _loc_description;
+@synthesize loc_address = _loc_address;
+@synthesize summary = _summary;
+@synthesize posting_date = _posting_date;
+@synthesize closing_date = _closing_date;
+@synthesize job_code = _job_code;
+@synthesize category = _category;
+@synthesize department = _department;
+@synthesize shift = _shift;
+@synthesize education = _education;
+@synthesize pay_rate = _pay_rate;
+@synthesize pay_range = _pay_range;
+@synthesize duration = _duration;
+@synthesize travel = _travel;
+@synthesize job_description = _job_description;
+@synthesize preferred_skills = _preferred_skills;
+
 //@synthesize facebook;
 //@synthesize managedObjectContext = _managedObjectContext;
 @synthesize  _quickList;
@@ -61,26 +85,38 @@ static NSString* kAppId = @"152139888244542";
     else {*/
         btnpreferiti.hidden = true;
     //}
-    
-     
-    self.makeLabel.text = [self.MessaggiDetailModel objectAtIndex:0];
-    self.modelLabel.text = [self.MessaggiDetailModel objectAtIndex:1];
-   // NSString *result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:2]];
-    
-    self.messaggioesteso.text = [self.MessaggiDetailModel objectAtIndex:1];
-   // self.messaggioesteso1.text = result;
-    
+ 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    NSString *DataConvert;
+
     
-    NSString *DataPubblicazione = [dateFormatter stringFromDate:[self.MessaggiDetailModel objectAtIndex:3]];
+    self.job_title.text = [self.MessaggiDetailModel objectAtIndex:0];
+    self.job_code.text = [self.MessaggiDetailModel objectAtIndex:1];
+
+    DataConvert =[self.MessaggiDetailModel objectAtIndex:2];
+    self.posting_date.text = [dateFormatter stringFromDate:[self.MessaggiDetailModel objectAtIndex:2]];
+    DataConvert =[self.MessaggiDetailModel objectAtIndex:2];
+    self.closing_date.text = DataConvert;
     
-    self.messaggioesteso1.text = DataPubblicazione;
-    self.messaggioesteso2.text = @"";
+    self.category.text = [self.MessaggiDetailModel objectAtIndex:4];
+    self.department.text = [self.MessaggiDetailModel objectAtIndex:5];
+    self.location.text= [self.MessaggiDetailModel objectAtIndex:6];
+    self.education.text=[self.MessaggiDetailModel objectAtIndex:8];
+    self.duration.text=[self.MessaggiDetailModel objectAtIndex:9];
+    self.travel.text =[self.MessaggiDetailModel objectAtIndex:10];
+    
+    NSString *result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:11]];
+    
+    self.job_description.text = result;
+    
+  
     
     
     
 }
+
+
 -(IBAction)Candidati:(id)sender
 {
 			[self launchMailAppOnDevice];
@@ -89,7 +125,7 @@ static NSString* kAppId = @"152139888244542";
 
 -(void)launchMailAppOnDevice
 {
-	NSString *recipients = [self.MessaggiDetailModel objectAtIndex:4];
+	NSString *recipients = [self.MessaggiDetailModel objectAtIndex:12];
 	
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:recipients]];
 }
@@ -394,7 +430,7 @@ static NSString* kAppId = @"152139888244542";
 {
     NSLog(@"Action: Two fingers, two taps");
     int app = [(UIPinchGestureRecognizer *) recognizer scale];
-    self.messaggioesteso.font =[UIFont fontWithName:@"System" size: app + 14];
+   // self.messaggioesteso.font =[UIFont fontWithName:@"System" size: app + 14];
  
    
  

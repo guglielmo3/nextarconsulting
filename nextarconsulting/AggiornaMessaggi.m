@@ -292,46 +292,21 @@ NSString *caricaDatiAggiorna = @"0";
     */
     if([elementName isEqualToString:@"category"])
     {
-        caricaDatiAggiorna = @"1";
+        
+        if([caricaDatiAggiorna isEqualToString:@"1"])
+        {
+            caricaDatiAggiorna = @"1";
+        }
+        else
+        {
+            caricaDatiAggiorna = @"2";
+
+        }
+        
     }
     
     if([caricaDatiAggiorna isEqualToString:@"1"])
     {
-      /*  if ([elementName isEqualToString:@"title"]) {
-            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-            NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-            noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            
-            
-            [_MessaggiMakes addObject:noWhiteSpace];
-        }
-        
-        if ([elementName isEqualToString:@"job_description"]) {
-            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-            
-            [_MessaggiModels addObject:immutableString];
-        }
-        
-        if ([elementName isEqualToString:@"link"]) {
-            [_MessaggiImages addObject:immutableString];
-        }
-        
-        if ([elementName isEqualToString:@"posting_date"])
-        {
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"dd MMM yyyy"];
-            NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier: @"en_EN"];
-            [dateFormatter setLocale:locale];
-            NSDate *dateFromString = [[NSDate alloc] init];
-            // voila!
-            NSString *value = [immutableString substringWithRange:NSMakeRange(5, 11)];
-            dateFromString = [dateFormatter dateFromString:value];
-            [_MessaggiDataPubblicazione addObject:dateFromString];
-            
-        }
-       */
         if ([elementName isEqualToString:@"title"]) {
             while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
                 immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
@@ -440,6 +415,11 @@ NSString *caricaDatiAggiorna = @"0";
         
     }
     
+    if([caricaDatiAggiorna isEqualToString:@"2"])
+    {
+        caricaDatiAggiorna = @"1";
+    }
+
     
     contenutoTag = [[NSMutableString alloc] init];
     

@@ -16,6 +16,6 @@
 -(NSString *)EmailContattaci;
 -(NSString *)EmailSubject;
 -(NSString *)SoloEmail;
-
+-(NSString *)IdApp;
 
 @end

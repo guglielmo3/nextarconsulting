@@ -160,7 +160,7 @@ NSString *caricaDatiAGG = @"0";
       */
         Parametri *parametri = [Parametri alloc];
         
-        NSString *path = parametri.Web_Service;
+   /*     NSString *path = parametri.Web_Service;
         NSURL *url = [NSURL URLWithString:path];
         NSXMLParser *parser =[[NSXMLParser alloc] initWithContentsOfURL:url];
         tipoRichiesta = @"rss";
@@ -170,7 +170,7 @@ NSString *caricaDatiAGG = @"0";
         int ciclo0 = 0;
         
         int tempNum;
- 
+ */
         AggiornaMessaggi *agg = [AggiornaMessaggi alloc];
         
         [agg AggiornaDati];
@@ -204,48 +204,6 @@ NSString *caricaDatiAGG = @"0";
     }
     [self stopRefresh];
     [self gestiscidaticore];
-    
-    
-}
--(void) gestiscidaticoreAggiorna
-{
-    //NON USATA E NON IMPLEMENTATA
-    
-    int app0 = self.Messaggititle.count;
-    int ciclo0 = 0;
-    
-    while (ciclo0 <= (app0 -1)) {
-        //Preparo la nuova riga in LavoriCompleta
-        self.currentLavoriCompleta = (LavoriCompleta *) [NSEntityDescription insertNewObjectForEntityForName:@"LavoriCompleta" inManagedObjectContext:self.managedObjectContext];
-        
-        //preparo la nuova riga in campi visibili
-        
-        self.currentCampiVisibili = (CampiVisibili *) [NSEntityDescription insertNewObjectForEntityForName:@"CampiVisibili" inManagedObjectContext:self.managedObjectContext];
-      
-         //Inserisco in LavoriCompleta
-        
-        
-        /*self.currentMessaggi = (Lavori *)[NSEntityDescription insertNewObjectForEntityForName:@"Lavori" inManagedObjectContext:self.managedObjectContext];
-        
-        // For both new and existing pictures, fill in the details from the form
-        NSNumber *prganno = [NSNumber numberWithInt:ciclo0];
-        [self.currentMessaggi setProgressivo:prganno];
-        [self.currentMessaggi setTitle:[self.MessaggiMakes objectAtIndex:ciclo0]];
-        [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
-        [self.currentMessaggi setLink:[self.MessaggiLink objectAtIndex:ciclo0]];
-        [self.currentMessaggi setDatapubblicazione:[self.MessaggiDataPubblicazione objectAtIndex:ciclo0]];
-         */
-         
-          ciclo0 = ciclo0 +1;
-        //  Commit item to core data
-        NSError *error;
-        if (![self.managedObjectContext save:&error])
-            NSLog(@"Failed to add new picture with error: %@", [error domain]);
-    }
-    
-    [self gestiscidaticore];
-    
-    
     
     
 }
@@ -313,8 +271,8 @@ NSString *caricaDatiAGG = @"0";
         controllo = [[CheckConnessione alloc] eseguiControllo];
         if (controllo) {
             
-            
-            
+            [self Aggiorna];
+          /*
             UIAlertView *alert;
             alert = [[UIAlertView alloc] initWithTitle:@"Attendere"
                                                message:@"Download e Installazione ultime Offerte"
@@ -389,14 +347,6 @@ NSString *caricaDatiAGG = @"0";
                 [self.currentLavoriCompleta setTitle:[self.Messaggititle objectAtIndex:ciclo0]];
                 [self.currentLavoriCompleta setTravel:[self.Messaggitravel objectAtIndex:ciclo0]];
                 
-             /*   // For both new and existing pictures, fill in the details from the form
-                NSNumber *prganno = [NSNumber numberWithInt:ciclo0];
-                [self.currentMessaggi setProgressivo:prganno];
-                [self.currentMessaggi setTitle:[self.MessaggiMakes objectAtIndex:ciclo0]];
-                [self.currentMessaggi setDescription_:[self.MessaggiModels objectAtIndex:ciclo0]];
-                [self.currentMessaggi setDatapubblicazione:[self.MessaggiDataPubblicazione objectAtIndex:ciclo0]];
-                [self.currentMessaggi setLink:[self.MessaggiLink objectAtIndex:ciclo0]];
-              */
                 ciclo0 = ciclo0 +1;
                 //  Commit item to core data
                 NSError *error;
@@ -405,14 +355,12 @@ NSString *caricaDatiAGG = @"0";
             }
 
             
-            
+            */
             
             [[UIApplication sharedApplication]cancelAllLocalNotifications];
             
-            /*
-             UILocalNotification *localNotification = [[UILocalNotification alloc]init];
-             [localNotification setApplicationIconBadgeNumber:0];
-             */
+           //UILocalNotification *localNotification = [[UILocalNotification alloc]init];
+           //  [localNotification setApplicationIconBadgeNumber:0];
             [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
             
             
@@ -618,12 +566,21 @@ NSString *caricaDatiAGG = @"0";
         //Passo tutti i record della pagina del dettaglio
         
         detailViewController.MessaggiDetailModel = [[NSArray alloc]
-                                               initWithObjects: [self.Messaggititle
+                                               initWithObjects: [self.Messaggijob_title
                                                                  objectAtIndex:[myIndexPath row]],
-                                               [self.Messaggijob_description objectAtIndex:[myIndexPath row]],
-                                               [self.Messaggijob_title objectAtIndex:[myIndexPath row]],
+                                               [self.Messaggijob_code objectAtIndex:[myIndexPath row]],
                                                [self.Messaggiposting_date objectAtIndex:[myIndexPath row]],
-                                               [self.Messaggipay_range objectAtIndex:[myIndexPath row]],
+                                               [self.Messaggiclosing_date objectAtIndex:[myIndexPath row]],
+                                               [self.Messaggicategory objectAtIndex:[myIndexPath row]],
+                                                    [self.Messaggidepartment objectAtIndex:[myIndexPath row]],
+                                                    [self.Messaggilocation objectAtIndex:[myIndexPath row]],
+                                                    [self.Messaggidepartment objectAtIndex:[myIndexPath row]],
+                                                    [self.Messaggieducation objectAtIndex:[myIndexPath row]],
+                                                    [self.Messaggiduration objectAtIndex:[myIndexPath row]],
+                                                    [self.Messaggitravel objectAtIndex:[myIndexPath row]],
+                                                    [self.Messaggijob_description objectAtIndex:[myIndexPath row]],
+                                                    [self.Messaggilink objectAtIndex:[myIndexPath row]],
+                                                    
                                                nil];
     }
     else {
@@ -654,20 +611,6 @@ NSString *caricaDatiAGG = @"0";
     app = MessaggiListData.count;
     int ciclo = 0;
     
-    /*
-     self.MessaggiMakes = [NSArray alloc];
-    self.MessaggiModels = [NSArray alloc];
-    self.MessaggiImages = [NSArray alloc];
-    self.MessaggiDataPubblicazione = [NSArray alloc];
-    self.MessaggiLink = [NSArray alloc];
-    
-    
-    self.MessaggiMakes = [self.MessaggiMakes init];
-    self.MessaggiModels = [self.MessaggiModels init];
-    self.MessaggiImages = [self.MessaggiImages init];
-    self.MessaggiDataPubblicazione = [self.MessaggiDataPubblicazione init];
-    self.MessaggiLink = [self.MessaggiLink init ];
-    */
     
     //Inizializzo gli array
     
@@ -724,16 +667,6 @@ NSString *caricaDatiAGG = @"0";
     while (ciclo < (app )) {
         currentCell = [MessaggiListData objectAtIndex:ciclo];
         
-        /*
-        self.MessaggiMakes =  [self.MessaggiMakes  arrayByAddingObject:[ currentCell title]];
-        self.MessaggiModels =  [self.MessaggiModels  arrayByAddingObject:[ currentCell description_]];
-        self.MessaggiImages = [self.MessaggiImages arrayByAddingObject: [currentCell progressivo]];
-        self.MessaggiDataPubblicazione = [self.MessaggiDataPubblicazione arrayByAddingObject:[currentCell datapubblicazione]];
-        self.MessaggiLink = [self.MessaggiLink arrayByAddingObject:[currentCell link]];
-        
-        //  self.MessaggiModels =  [self.MessaggiModels arrayByAddingObject:[ currentCell description_]];
-     //   self.MessaggiImages =  [self.MessaggiImages arrayByAddingObject:[ currentCell link]];
-         */
         
         
         //Riempio gli array con il contenuto della cella
@@ -868,284 +801,6 @@ NSString *caricaDatiAGG = @"0";
     
 }
  */
--(void) parser:(NSXMLParser *) parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
-    NSLog(@"Inizio Tag%@",elementName);
-    storingCharacters = YES;
-}
-
--(void) parser:(NSXMLParser *) parser foundCharacters:(NSString *)string
-{
-    if (storingCharacters) [contenutoTag appendString:string];
-    
-}
-
-
--(void) parser:(NSXMLParser *) parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{
- /*
-  NSString *immutableString = [NSString stringWithString:contenutoTag];
-    
-    if ([elementName isEqualToString:@"title"]) {
-        [_MessaggiMakes1 addObject:immutableString];
-    }
-    
-    if ([elementName isEqualToString:@"content"]) {
-        NSRange r;
-        while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-            immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-        
-        [_MessaggiModels1 addObject:immutableString];
-    }
-    
-    if ([elementName isEqualToString:@"link"]) {
-        [_MessaggiImages1 addObject:immutableString];
-    }
-  */
-    NSString *immutableString = [NSString stringWithString:contenutoTag];
-    
-    NSRange r;
-    
-    
-  /*  if ([tipoRichiesta isEqualToString:@"atom"])
-    {
-        
-        if([elementName isEqualToString:@"entry"])
-        {
-            caricaDatiAGG = @"1";
-        }
-        
-        if([caricaDatiAGG isEqualToString:@"1"])
-        {
-            if ([elementName isEqualToString:@"title"]) {
-                while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-                    immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-                NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-                noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                
-                
-                [_MessaggiMakes1 addObject:noWhiteSpace];
-            }
-            
-            if ([elementName isEqualToString:@"content"]) {
-                while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-                    immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-                
-                [_MessaggiModels1 addObject:immutableString];
-            }
-            
-            if ([elementName isEqualToString:@"link"]) {
-                [_MessaggiImages1 addObject:immutableString];
-            }
-            
-            if ([elementName isEqualToString:@"published"])
-            {
-                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                // this is imporant - we set our input date format to match our input string
-                // if format doesn't match you'll get nil from your string, so be careful
-                [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-                NSDate *dateFromString = [[NSDate alloc] init];
-                // voila!
-                NSString *value = [immutableString substringWithRange:NSMakeRange(0, 10)];
-                dateFromString = [dateFormatter dateFromString:value];
-                [_MessaggiDataPubblicazione1 addObject:dateFromString];
-                
-            }
-            
-        }
-    }
-    else
-    {
-        if([elementName isEqualToString:@"item"])
-        {
-            caricaDatiAGG = @"1";
-        }
-        
-        if([caricaDatiAGG isEqualToString:@"1"])
-        {
-            if ([elementName isEqualToString:@"title"]) {
-                while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-                    immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-                NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-                noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                
-                
-                [_MessaggiMakes1 addObject:noWhiteSpace];
-            }
-            
-            if ([elementName isEqualToString:@"description"]) {
-                while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-                    immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-                
-                [_MessaggiModels1 addObject:immutableString];
-            }
-            
-            if ([elementName isEqualToString:@"link"]) {
-                [_MessaggiImages1 addObject:immutableString];
-            }
-            
-            if ([elementName isEqualToString:@"pubDate"])
-            {
-                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                [dateFormatter setDateFormat:@"dd MMM yyyy"];
-                NSDate *dateFromString = [[NSDate alloc] init];
-                // voila!
-                NSString *value = [immutableString substringWithRange:NSMakeRange(5, 11)];
-                dateFromString = [dateFormatter dateFromString:value];
-                [_MessaggiDataPubblicazione1 addObject:dateFromString];
-                
-            }
-            
-        }
-        
-    }
-    */
-    
-    //Faccio il parse del contenuto
-    
-    if([elementName isEqualToString:@"item"])
-    {
-        caricaDatiAGG = @"1";
-    }
-    
-    if([caricaDatiAGG isEqualToString:@"1"])
-    {
-        if ([elementName isEqualToString:@"title"]) {
-            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-            NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-            noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            
-            
-            [_Messaggititle1 addObject:noWhiteSpace];
-        }
-        
-
-        
-        if ([elementName isEqualToString:@"link"]) {
-            [_Messaggilink1 addObject:immutableString];
-        }
-        
-        if ([elementName isEqualToString:@"company"]) {
-            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-            NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-            noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-           [_Messaggicompany1 addObject:noWhiteSpace];
-        }
-
-        if ([elementName isEqualToString:@"job_title"]) {
-            [_Messaggijob_title1 addObject:immutableString];
-        }
-        
-        
-        if ([elementName isEqualToString:@"location"]) {
-            [_Messaggilocation1 addObject:immutableString];
-        }
-
-        if ([elementName isEqualToString:@"loc_description"]) {
-            [_Messaggiloc_description1 addObject:immutableString];
-        }
-        if ([elementName isEqualToString:@"loc_address"]) {
-            [_Messaggiloc_address1 addObject:immutableString];
-        }
-        if ([elementName isEqualToString:@"summary"]) {
-            [_Messaggisummary1 addObject:immutableString];
-        }
-
-        if ([elementName isEqualToString:@"posting_date"]) {
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"dd MMM yyyy"];
-            NSDate *dateFromString = [[NSDate alloc] init];
-            // voila!
-            NSString *value = [immutableString substringWithRange:NSMakeRange(5, 11)];
-            dateFromString = [dateFormatter dateFromString:value];
-           [_Messaggiposting_date1 addObject:dateFromString];
-        }
-        if ([elementName isEqualToString:@"closing_date"]) {
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"dd MMM yyyy"];
-            NSDate *dateFromString = [[NSDate alloc] init];
-            // voila!
-            NSString *value = [immutableString substringWithRange:NSMakeRange(5, 11)];
-            dateFromString = [dateFormatter dateFromString:value];
-          [_Messaggiclosing_date1 addObject:dateFromString];
-        }
-
-        if ([elementName isEqualToString:@"job_code"]) {
-            [_Messaggijob_code1 addObject:immutableString];
-        }
-        if ([elementName isEqualToString:@"category"]) {
-            [_Messaggicategory1 addObject:immutableString];
-        }
-
-        if ([elementName isEqualToString:@"department"]) {
-            [_Messaggidepartment1 addObject:immutableString];
-        }
-        if ([elementName isEqualToString:@"shift"]) {
-            [_Messaggishift1 addObject:immutableString];
-        }
-
-        if ([elementName isEqualToString:@"education"]) {
-            [_Messaggieducation1 addObject:immutableString];
-        }
-
-        if ([elementName isEqualToString:@"pay_rate"]) {
-            [_Messaggipay_rate1 addObject:immutableString];
-        }
-
-        if ([elementName isEqualToString:@"pay_range"]) {
-            [_Messaggipay_range1 addObject:immutableString];
-        }
-
-        if ([elementName isEqualToString:@"duration"]) {
-            [_Messaggiduration1 addObject:immutableString];
-        }
-
-        if ([elementName isEqualToString:@"travel"]) {
-            [_Messaggitravel1 addObject:immutableString];
-        }
-        if ([elementName isEqualToString:@"job_description"]) {
-            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-            [_Messaggijob_description1 addObject:immutableString];
-        }
-
-        if ([elementName isEqualToString:@"preferred_skills"]) {
-            [_Messaggipreferred_skills1 addObject:immutableString];
-        }
-
-        
-/*        if ([elementName isEqualToString:@"description"]) {
-            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
-            
-            [_MessaggiModels1 addObject:immutableString];
-        }
- 
-        
-        if ([elementName isEqualToString:@"pubDate"])
-        {
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"dd MMM yyyy"];
-            NSDate *dateFromString = [[NSDate alloc] init];
-            // voila!
-            NSString *value = [immutableString substringWithRange:NSMakeRange(5, 11)];
-            dateFromString = [dateFormatter dateFromString:value];
-            [_MessaggiDataPubblicazione1 addObject:dateFromString];
-            
-        }
- */
-    }
-
-    
-    
-    contenutoTag = [[NSMutableString alloc] init];
-    
-    storingCharacters = NO;
-
-
-}
 
 
 - (BOOL)configurePersistentStoreCoordinatorForURL:(NSURL *)url ofType:(NSString *)fileType modelConfiguration:(NSString *)configuration storeOptions:(NSDictionary *)storeOptions error:(NSError **)error

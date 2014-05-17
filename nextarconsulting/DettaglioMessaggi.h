@@ -54,13 +54,35 @@
 -(IBAction)Pinch:(UIPinchGestureRecognizer *)recognizer;
 -(IBAction)Candidati:(id)sender;;
 
-@property (strong, nonatomic) NSArray *MessaggiDetailModel;
+/*@property (strong, nonatomic) NSArray *MessaggiDetailModel;
 @property (strong, nonatomic) IBOutlet UILabel *makeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *modelLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-@property (strong, nonatomic) IBOutlet UITextView *messaggioesteso;
-@property (strong, nonatomic) IBOutlet UITextView *messaggioesteso1;
-@property (strong, nonatomic) IBOutlet UITextView *messaggioesteso2;
+@property (strong, nonatomic) IBOutlet UITextView *messaggioesteso;*/
+
+
+@property (strong, nonatomic) NSArray *MessaggiDetailModel;
+@property (nonatomic, strong) IBOutlet UILabel *link;
+@property (nonatomic, strong) IBOutlet UILabel *company;
+@property (nonatomic, strong) IBOutlet UILabel *job_title;
+@property (nonatomic, strong) IBOutlet UILabel *location;
+@property (nonatomic, strong) IBOutlet UILabel *loc_description;
+@property (nonatomic, strong) IBOutlet UILabel *loc_address;
+@property (nonatomic, strong) IBOutlet UILabel *summary;
+@property (nonatomic, strong) IBOutlet UILabel *posting_date;
+@property (nonatomic, strong) IBOutlet UILabel *closing_date;
+@property (nonatomic, strong) IBOutlet UILabel *job_code;
+@property (nonatomic, strong) IBOutlet UILabel *category;
+@property (nonatomic, strong) IBOutlet UILabel *department;
+@property (nonatomic, strong) IBOutlet UILabel *shift;
+@property (nonatomic, strong) IBOutlet UILabel *education;
+@property (nonatomic, strong) IBOutlet UILabel *pay_rate;
+@property (nonatomic, strong) IBOutlet UILabel *pay_range;
+@property (nonatomic, strong) IBOutlet UILabel *duration;
+@property (nonatomic, strong) IBOutlet UILabel *travel;
+@property (nonatomic, strong) IBOutlet UITextView *job_description;
+@property (nonatomic, strong) IBOutlet UILabel *preferred_skills;
+
 //@property (strong, nonatomic) ACAccountStore *accounts;
 
 

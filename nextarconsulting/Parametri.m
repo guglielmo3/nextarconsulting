@@ -26,5 +26,9 @@
 {
     return @"sales@nextarconsulting.com";
 }
+-(NSString *)IdApp
+{
+    return @"152139888244542";
+}
 
 @end

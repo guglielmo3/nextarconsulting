@@ -12,9 +12,6 @@
 #import "CampiVisibili.h"
 
 @interface MessaggiTableViewController  : UITableViewController<UISearchBarDelegate,UISearchDisplayDelegate>{
-//IBOutlet UISegmentedControl *Segment;
-//    IBOutlet UILabel *LblAttesa;
-//    IBOutlet UIActivityIndicatorView *indicatore;
     BOOL storingCharacters;
     NSMutableString *contenutoTag;
     NSMutableArray *AnniMutableArray;
@@ -22,12 +19,6 @@
     IBOutlet UISearchBar *searchbar;
 
 }
-/*@property (nonatomic, strong) NSArray *MessaggiImages;
-@property (nonatomic, strong) NSArray *MessaggiMakes;
-@property (nonatomic, strong) NSArray *MessaggiModels;
-@property (nonatomic, strong) NSArray *MessaggiDataPubblicazione;
- @property (nonatomic, strong) NSArray *MessaggiLink;
- */
 
 @property (nonatomic, strong) NSArray *Messaggititle;
 @property (nonatomic, strong) NSArray *Messaggilink;
@@ -53,14 +44,6 @@
 
 
 
-
-
-/*@property (nonatomic, strong) NSMutableArray *MessaggiImages1;
-@property (nonatomic, strong) NSMutableArray *MessaggiMakes1;
-@property (nonatomic, strong) NSMutableArray *MessaggiModels1;
-@property (nonatomic, strong) NSMutableArray *MessaggiDataPubblicazione1;
- */
-//@property (nonatomic, strong) NSMutableArray *MessaggiLink1;
 
 @property (nonatomic, strong) NSMutableArray *Messaggititle1;
 @property (nonatomic, strong) NSMutableArray *Messaggilink1;
