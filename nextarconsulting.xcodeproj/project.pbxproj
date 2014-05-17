@@ -29,7 +29,6 @@
 		2F5EEFC018F58E93003CF4D2 /* MessaggiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9518F58E93003CF4D2 /* MessaggiTableViewController.m */; };
 		2F5EEFC118F58E93003CF4D2 /* MessaggiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9718F58E93003CF4D2 /* MessaggiTableViewCell.m */; };
 		2F5EEFC218F58E93003CF4D2 /* DettaglioMessaggi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9918F58E93003CF4D2 /* DettaglioMessaggi.m */; };
-		2F5EEFCE18F58E93003CF4D2 /* SearchMessaggiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB118F58E93003CF4D2 /* SearchMessaggiViewController.m */; };
 		2F5EEFCF18F58E93003CF4D2 /* CheckConnessione.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB318F58E93003CF4D2 /* CheckConnessione.m */; };
 		2F5EEFD018F58E93003CF4D2 /* Contattaci.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB518F58E93003CF4D2 /* Contattaci.m */; };
 		2F5EEFD118F58E93003CF4D2 /* Aggiorna.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB718F58E93003CF4D2 /* Aggiorna.m */; };
@@ -92,8 +91,6 @@
 		2F5EEF9718F58E93003CF4D2 /* MessaggiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessaggiTableViewCell.m; sourceTree = "<group>"; };
 		2F5EEF9818F58E93003CF4D2 /* DettaglioMessaggi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DettaglioMessaggi.h; sourceTree = "<group>"; };
 		2F5EEF9918F58E93003CF4D2 /* DettaglioMessaggi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DettaglioMessaggi.m; sourceTree = "<group>"; };
-		2F5EEFB018F58E93003CF4D2 /* SearchMessaggiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchMessaggiViewController.h; sourceTree = "<group>"; };
-		2F5EEFB118F58E93003CF4D2 /* SearchMessaggiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchMessaggiViewController.m; sourceTree = "<group>"; };
 		2F5EEFB218F58E93003CF4D2 /* CheckConnessione.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckConnessione.h; sourceTree = "<group>"; };
 		2F5EEFB318F58E93003CF4D2 /* CheckConnessione.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckConnessione.m; sourceTree = "<group>"; };
 		2F5EEFB418F58E93003CF4D2 /* Contattaci.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contattaci.h; sourceTree = "<group>"; };
@@ -187,8 +184,6 @@
 				2F5EEF9718F58E93003CF4D2 /* MessaggiTableViewCell.m */,
 				2F5EEF9818F58E93003CF4D2 /* DettaglioMessaggi.h */,
 				2F5EEF9918F58E93003CF4D2 /* DettaglioMessaggi.m */,
-				2F5EEFB018F58E93003CF4D2 /* SearchMessaggiViewController.h */,
-				2F5EEFB118F58E93003CF4D2 /* SearchMessaggiViewController.m */,
 				2F5EEFB218F58E93003CF4D2 /* CheckConnessione.h */,
 				2F5EEFB318F58E93003CF4D2 /* CheckConnessione.m */,
 				2F0375D21914FE5C0083A38B /* AggiornaMessaggi.h */,
@@ -381,7 +376,6 @@
 				2F5EEFDC18F5A5CA003CF4D2 /* Reachability.m in Sources */,
 				2F0375D31914FE5C0083A38B /* AggiornaMessaggi.m in Sources */,
 				2F5EEFC118F58E93003CF4D2 /* MessaggiTableViewCell.m in Sources */,
-				2F5EEFCE18F58E93003CF4D2 /* SearchMessaggiViewController.m in Sources */,
 				2F0B563718E87AEF00EA0D20 /* AppDelegate.m in Sources */,
 				2F8D543018F5C4E800C6E5A9 /* Lavori.m in Sources */,
 				2F5EEFD118F58E93003CF4D2 /* Aggiorna.m in Sources */,

@@ -11,7 +11,7 @@
 #import "LavoriCompleta.h"
 #import "CampiVisibili.h"
 
-@interface MessaggiTableViewController  : UITableViewController{
+@interface MessaggiTableViewController  : UITableViewController<UISearchBarDelegate,UISearchDisplayDelegate>{
 //IBOutlet UISegmentedControl *Segment;
 //    IBOutlet UILabel *LblAttesa;
 //    IBOutlet UIActivityIndicatorView *indicatore;
@@ -19,6 +19,7 @@
     NSMutableString *contenutoTag;
     NSMutableArray *AnniMutableArray;
     NSMutableArray *AnniTotaleMutableArray;
+    IBOutlet UISearchBar *searchbar;
 
 }
 /*@property (nonatomic, strong) NSArray *MessaggiImages;
@@ -95,6 +96,7 @@
 @property (nonatomic, retain) NSMutableArray *AnniMutableArray;
 @property (nonatomic, retain) NSMutableArray *AnniTotaleMutableArray;
 //@property (strong, nonatomic) NSMutableArray *NumUltimaPubblicazione;
+@property (nonatomic, retain) IBOutlet UISearchBar  *searchbar;
 
 
 -(IBAction)changeSeg;

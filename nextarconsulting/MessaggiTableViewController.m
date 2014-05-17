@@ -62,6 +62,7 @@
 @synthesize AnniMutableArray;
 @synthesize AnniTotaleMutableArray;
 //@synthesize NumUltimaPubblicazione;
+@synthesize searchbar;
 
 NSString *tipoRichiesta;
 NSString *caricaDatiAGG = @"0";
@@ -266,6 +267,8 @@ NSString *caricaDatiAGG = @"0";
     
     
     self.refreshControl = refresh;
+    [self.tableView reloadData];
+    
     
     
     
@@ -1163,6 +1166,226 @@ NSString *caricaDatiAGG = @"0";
 	BOOL result = [self configurePersistentStoreCoordinatorForURL:url ofType:fileType modelConfiguration:configuration storeOptions:options error:error];
 	//[options release], options = nil;
 	return result;
+}
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    // only show the status bar's cancel button while in edit mode
+    searchbar.showsCancelButton = YES;
+    searchbar.autocorrectionType = UITextAutocorrectionTypeNo;
+    // flush the previous search content
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    [self filterContentForSearchText:searchText];
+    // Return YES to cause the search result table view to be reloaded.
+    
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.view endEditing:YES];
+}
+
+- (void) searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [self.view endEditing:YES];
+    self.searchbar.text = @"";
+
+    self.Messaggicategory = [NSArray alloc];
+    self.Messaggiclosing_date = [NSArray alloc];
+    self.Messaggicompany = [NSArray alloc];
+    self.Messaggidepartment = [NSArray alloc];
+    self.Messaggiduration = [NSArray alloc];
+    self.Messaggieducation = [NSArray alloc];
+    self.Messaggijob_code = [NSArray alloc];
+    self.Messaggijob_description = [NSArray alloc];
+    self.Messaggijob_title = [NSArray alloc];
+    self.Messaggilink = [NSArray alloc];
+    self.Messaggiloc_address = [NSArray alloc];
+    self.Messaggiloc_description = [NSArray alloc];
+    self.Messaggilocation = [NSArray alloc];
+    self.Messaggipay_range = [NSArray alloc];
+    self.Messaggipay_rate = [NSArray alloc];
+    self.Messaggiposting_date = [NSArray alloc];
+    self.Messaggipreferred_skills = [NSArray alloc];
+    self.Messaggishift = [NSArray alloc];
+    self.Messaggisummary = [NSArray alloc];
+    self.Messaggititle = [NSArray alloc];
+    self.Messaggitravel = [NSArray alloc];
+    
+    
+    self.Messaggicategory = [self.Messaggicategory init];
+    self.Messaggiclosing_date = [self.Messaggiclosing_date init];
+    self.Messaggicompany = [self.Messaggicompany init];
+    self.Messaggidepartment = [self.Messaggidepartment init];
+    self.Messaggiduration = [self.Messaggiduration init];
+    self.Messaggieducation = [self.Messaggieducation init];
+    self.Messaggijob_code = [self.Messaggijob_code init];
+    self.Messaggijob_description = [self.Messaggijob_description init];
+    self.Messaggijob_title = [self.Messaggijob_title init];
+    self.Messaggilink = [self.Messaggilink init];
+    self.Messaggiloc_address = [self.Messaggiloc_address init];
+    self.Messaggiloc_description = [self.Messaggiloc_description init];
+    self.Messaggilocation = [self.Messaggilocation init];
+    self.Messaggipay_range = [self.Messaggipay_range init];
+    self.Messaggipay_rate = [self.Messaggipay_rate init];
+    self.Messaggiposting_date = [self.Messaggiposting_date init];
+    self.Messaggipreferred_skills = [self.Messaggipreferred_skills init];
+    self.Messaggishift = [self.Messaggishift init];
+    self.Messaggisummary = [self.Messaggisummary init];
+    self.Messaggititle = [self.Messaggititle init];
+    self.Messaggitravel = [self.Messaggitravel init];
+    
+    if ([CoreDataHelper countForEntity:@"LavoriCompleta" withPredicate:nil andContext:managedObjectContext] != 0)
+    {
+        MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"LavoriCompleta" withPredicate:nil andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
+        int app = MessaggiListData.count;
+        int ciclo = 0;
+        
+        
+        
+        LavoriCompleta *currentCell ;
+        
+        //  Fill in the cell contents
+        
+        while (ciclo < (app)) {
+            currentCell = [MessaggiListData objectAtIndex:ciclo];
+            
+            
+            //Riempio gli array con il contenuto della cella
+            self.Messaggicategory = [self.Messaggicategory arrayByAddingObject:[ currentCell category]];
+            self.Messaggiclosing_date = [self.Messaggiclosing_date arrayByAddingObject:[ currentCell closing_date]];
+            self.Messaggicompany = [self.Messaggicompany arrayByAddingObject:[ currentCell company]];
+            self.Messaggidepartment = [self.Messaggidepartment arrayByAddingObject:[ currentCell department]];
+            self.Messaggiduration = [self.Messaggiduration arrayByAddingObject:[ currentCell duration]];
+            self.Messaggieducation = [self.Messaggieducation arrayByAddingObject:[ currentCell education]];
+            self.Messaggijob_code = [self.Messaggijob_code arrayByAddingObject:[ currentCell job_code]];
+            self.Messaggijob_description = [self.Messaggijob_description arrayByAddingObject:[ currentCell job_description]];
+            self.Messaggijob_title = [self.Messaggijob_title arrayByAddingObject:[ currentCell job_title]];
+            self.Messaggilink = [self.Messaggilink arrayByAddingObject:[ currentCell link]];
+            self.Messaggiloc_address = [self.Messaggiloc_address arrayByAddingObject:[ currentCell loc_address]];
+            self.Messaggiloc_description = [self.Messaggiloc_description arrayByAddingObject:[ currentCell loc_description]];
+            self.Messaggilocation = [self.Messaggilocation arrayByAddingObject:[ currentCell location]];
+            self.Messaggipay_range = [self.Messaggipay_range arrayByAddingObject:[ currentCell pay_range]];
+            self.Messaggipay_rate = [self.Messaggipay_rate arrayByAddingObject:[ currentCell pay_rate]];
+            self.Messaggiposting_date = [self.Messaggiposting_date arrayByAddingObject:[ currentCell posting_date]];
+            self.Messaggipreferred_skills = [self.Messaggipreferred_skills arrayByAddingObject:[ currentCell preferred_skills]];
+            self.Messaggishift = [self.Messaggishift arrayByAddingObject:[ currentCell shift]];
+            self.Messaggisummary = [self.Messaggisummary arrayByAddingObject:[ currentCell summary]];
+            self.Messaggititle = [self.Messaggititle  arrayByAddingObject:[ currentCell title]];
+            self.Messaggitravel = [self.Messaggitravel arrayByAddingObject:[ currentCell travel]];
+            
+            ciclo = ciclo +1;
+        }
+        
+        
+    }
+    [self.tableView reloadData];
+}
+
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString];
+    // Return YES to cause the search result table view to be reloaded.
+    return YES;
+}
+
+
+- (void)filterContentForSearchText:(NSString*)searchText {
+    
+    self.Messaggicategory = [NSArray alloc];
+    self.Messaggiclosing_date = [NSArray alloc];
+    self.Messaggicompany = [NSArray alloc];
+    self.Messaggidepartment = [NSArray alloc];
+    self.Messaggiduration = [NSArray alloc];
+    self.Messaggieducation = [NSArray alloc];
+    self.Messaggijob_code = [NSArray alloc];
+    self.Messaggijob_description = [NSArray alloc];
+    self.Messaggijob_title = [NSArray alloc];
+    self.Messaggilink = [NSArray alloc];
+    self.Messaggiloc_address = [NSArray alloc];
+    self.Messaggiloc_description = [NSArray alloc];
+    self.Messaggilocation = [NSArray alloc];
+    self.Messaggipay_range = [NSArray alloc];
+    self.Messaggipay_rate = [NSArray alloc];
+    self.Messaggiposting_date = [NSArray alloc];
+    self.Messaggipreferred_skills = [NSArray alloc];
+    self.Messaggishift = [NSArray alloc];
+    self.Messaggisummary = [NSArray alloc];
+    self.Messaggititle = [NSArray alloc];
+    self.Messaggitravel = [NSArray alloc];
+    
+    
+    self.Messaggicategory = [self.Messaggicategory init];
+    self.Messaggiclosing_date = [self.Messaggiclosing_date init];
+    self.Messaggicompany = [self.Messaggicompany init];
+    self.Messaggidepartment = [self.Messaggidepartment init];
+    self.Messaggiduration = [self.Messaggiduration init];
+    self.Messaggieducation = [self.Messaggieducation init];
+    self.Messaggijob_code = [self.Messaggijob_code init];
+    self.Messaggijob_description = [self.Messaggijob_description init];
+    self.Messaggijob_title = [self.Messaggijob_title init];
+    self.Messaggilink = [self.Messaggilink init];
+    self.Messaggiloc_address = [self.Messaggiloc_address init];
+    self.Messaggiloc_description = [self.Messaggiloc_description init];
+    self.Messaggilocation = [self.Messaggilocation init];
+    self.Messaggipay_range = [self.Messaggipay_range init];
+    self.Messaggipay_rate = [self.Messaggipay_rate init];
+    self.Messaggiposting_date = [self.Messaggiposting_date init];
+    self.Messaggipreferred_skills = [self.Messaggipreferred_skills init];
+    self.Messaggishift = [self.Messaggishift init];
+    self.Messaggisummary = [self.Messaggisummary init];
+    self.Messaggititle = [self.Messaggititle init];
+    self.Messaggitravel = [self.Messaggitravel init];
+    
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(title CONTAINS[cd] %@) ",searchText];
+    if ([CoreDataHelper countForEntity:@"LavoriCompleta" withPredicate:pred andContext:managedObjectContext] != 0)
+    {
+        MessaggiListData = [CoreDataHelper searchObjectsForEntity:@"LavoriCompleta" withPredicate:pred andSortKey:@"progressivo" andSortAscending:YES andContext:managedObjectContext];
+        int app = MessaggiListData.count;
+        int ciclo = 0;
+        
+ 
+        
+        LavoriCompleta *currentCell ;
+        
+        //  Fill in the cell contents
+        
+        while (ciclo < (app)) {
+            currentCell = [MessaggiListData objectAtIndex:ciclo];
+            
+            
+            //Riempio gli array con il contenuto della cella
+            self.Messaggicategory = [self.Messaggicategory arrayByAddingObject:[ currentCell category]];
+            self.Messaggiclosing_date = [self.Messaggiclosing_date arrayByAddingObject:[ currentCell closing_date]];
+            self.Messaggicompany = [self.Messaggicompany arrayByAddingObject:[ currentCell company]];
+            self.Messaggidepartment = [self.Messaggidepartment arrayByAddingObject:[ currentCell department]];
+            self.Messaggiduration = [self.Messaggiduration arrayByAddingObject:[ currentCell duration]];
+            self.Messaggieducation = [self.Messaggieducation arrayByAddingObject:[ currentCell education]];
+            self.Messaggijob_code = [self.Messaggijob_code arrayByAddingObject:[ currentCell job_code]];
+            self.Messaggijob_description = [self.Messaggijob_description arrayByAddingObject:[ currentCell job_description]];
+            self.Messaggijob_title = [self.Messaggijob_title arrayByAddingObject:[ currentCell job_title]];
+            self.Messaggilink = [self.Messaggilink arrayByAddingObject:[ currentCell link]];
+            self.Messaggiloc_address = [self.Messaggiloc_address arrayByAddingObject:[ currentCell loc_address]];
+            self.Messaggiloc_description = [self.Messaggiloc_description arrayByAddingObject:[ currentCell loc_description]];
+            self.Messaggilocation = [self.Messaggilocation arrayByAddingObject:[ currentCell location]];
+            self.Messaggipay_range = [self.Messaggipay_range arrayByAddingObject:[ currentCell pay_range]];
+            self.Messaggipay_rate = [self.Messaggipay_rate arrayByAddingObject:[ currentCell pay_rate]];
+            self.Messaggiposting_date = [self.Messaggiposting_date arrayByAddingObject:[ currentCell posting_date]];
+            self.Messaggipreferred_skills = [self.Messaggipreferred_skills arrayByAddingObject:[ currentCell preferred_skills]];
+            self.Messaggishift = [self.Messaggishift arrayByAddingObject:[ currentCell shift]];
+            self.Messaggisummary = [self.Messaggisummary arrayByAddingObject:[ currentCell summary]];
+            self.Messaggititle = [self.Messaggititle  arrayByAddingObject:[ currentCell title]];
+            self.Messaggitravel = [self.Messaggitravel arrayByAddingObject:[ currentCell travel]];
+
+            ciclo = ciclo +1;
+        }
+        
+        
+    }
+    [self.tableView reloadData];
+    
 }
 
 @end
