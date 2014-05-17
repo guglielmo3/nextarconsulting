@@ -1024,7 +1024,11 @@ NSString *caricaDatiAGG = @"0";
         }
         
         if ([elementName isEqualToString:@"company"]) {
-            [_Messaggicompany1 addObject:immutableString];
+            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+            NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+            noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+           [_Messaggicompany1 addObject:noWhiteSpace];
         }
 
         if ([elementName isEqualToString:@"job_title"]) {
