@@ -15,11 +15,12 @@
 
 NSString *tipoRichiesta;
 NSString *caricaDatiAggiorna = @"0";
-
+NSString *locationVar =@"0";
 
 -(BOOL) AggiornaDati
 {
     caricaDatiAggiorna = @"0";
+    locationVar= @"0";
     if (_managedObjectContext == nil)
 	{
         _managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
@@ -338,6 +339,7 @@ NSString *caricaDatiAggiorna = @"0";
         
         if ([elementName isEqualToString:@"location"]) {
             [_Messaggilocation addObject:immutableString];
+            locationVar = @"1";
         }
         
         if ([elementName isEqualToString:@"loc_description"]) {

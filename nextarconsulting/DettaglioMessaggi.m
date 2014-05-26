@@ -88,6 +88,7 @@ Parametri *parametri;
  
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+  //  [dateFormatter setDateFormat:@"dd-MM-yyyy"];
     NSString *DataConvert;
     NSString *result;
     
@@ -108,7 +109,7 @@ Parametri *parametri;
     DataConvert =[self.MessaggiDetailModel objectAtIndex:3];
    // result = [NSString stringWithFormat:@"%@", DataConvert];
     //[self.closing_date loadHTMLString:result baseURL:nil];
-    self.closing_date.text = DataConvert;
+    self.closing_date.text = [dateFormatter stringFromDate:[self.MessaggiDetailModel objectAtIndex:3]];
     
     //result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:4]];
  //  [self.category loadHTMLString:result baseURL:nil];
@@ -121,6 +122,8 @@ Parametri *parametri;
     self.location.text= [self.MessaggiDetailModel objectAtIndex:6];
     //result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:11]];
   //[self.location loadHTMLString:result baseURL:nil];
+    self.loc_description.text= [self.MessaggiDetailModel objectAtIndex:14];
+    self.loc_address.text= [self.MessaggiDetailModel objectAtIndex:15];
     
     //result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:8]];
    //[self.education loadHTMLString:result baseURL:nil];

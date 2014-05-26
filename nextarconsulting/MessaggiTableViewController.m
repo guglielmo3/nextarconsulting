@@ -581,6 +581,8 @@ NSString *caricaDatiAGG = @"0";
                                                     [self.Messaggijob_description objectAtIndex:[myIndexPath row]],
                                                     [self.Messaggilink objectAtIndex:[myIndexPath row]],
                                                     [self.Messaggipreferred_skills objectAtIndex:[myIndexPath row]],
+                                                    [self.Messaggiloc_description objectAtIndex:[myIndexPath row]],
+                                                    [self.Messaggiloc_address objectAtIndex:[myIndexPath row]],
                                                     
                                                nil];
     }
