@@ -16,7 +16,6 @@
 		2F0B563318E87AEF00EA0D20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B563218E87AEF00EA0D20 /* main.m */; };
 		2F0B563718E87AEF00EA0D20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B563618E87AEF00EA0D20 /* AppDelegate.m */; };
 		2F0B563A18E87AEF00EA0D20 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B563818E87AEF00EA0D20 /* Main_iPhone.storyboard */; };
-		2F0B563D18E87AEF00EA0D20 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B563B18E87AEF00EA0D20 /* Main_iPad.storyboard */; };
 		2F0B564518E87AEF00EA0D20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0B564418E87AEF00EA0D20 /* Images.xcassets */; };
 		2F0B564C18E87AEF00EA0D20 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B564B18E87AEF00EA0D20 /* XCTest.framework */; };
 		2F0B564D18E87AEF00EA0D20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0B562618E87AEF00EA0D20 /* Foundation.framework */; };
@@ -63,14 +62,15 @@
 		2F0B563418E87AEF00EA0D20 /* nextarconsulting-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nextarconsulting-Prefix.pch"; sourceTree = "<group>"; };
 		2F0B563518E87AEF00EA0D20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2F0B563618E87AEF00EA0D20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2F0B563918E87AEF00EA0D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		2F0B563C18E87AEF00EA0D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		2F0B564418E87AEF00EA0D20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2F0B564A18E87AEF00EA0D20 /* nextarconsultingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nextarconsultingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0B564B18E87AEF00EA0D20 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2F0B565318E87AEF00EA0D20 /* nextarconsultingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nextarconsultingTests-Info.plist"; sourceTree = "<group>"; };
 		2F0B565518E87AEF00EA0D20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F0B565718E87AEF00EA0D20 /* nextarconsultingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nextarconsultingTests.m; sourceTree = "<group>"; };
+		2F0CEC00193359D100DDF268 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		2F0CEC01193359D100DDF268 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2F0CEC02193359D100DDF268 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F266B131933305800B08187 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		2F2B2C1218EDD830009F9AE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2F2B2C1418EDDC1C009F9AE9 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
@@ -258,7 +258,6 @@
 		2F8D543218F5E8FA00C6E5A9 /* Ipad */ = {
 			isa = PBXGroup;
 			children = (
-				2F0B563B18E87AEF00EA0D20 /* Main_iPad.storyboard */,
 			);
 			name = Ipad;
 			sourceTree = "<group>";
@@ -330,6 +329,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 2F0B561A18E87AEE00EA0D20;
 			productRefGroup = 2F0B562418E87AEE00EA0D20 /* Products */;
@@ -347,7 +347,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F0B563D18E87AEF00EA0D20 /* Main_iPad.storyboard in Resources */,
 				2F0B564518E87AEF00EA0D20 /* Images.xcassets in Resources */,
 				2F0B563A18E87AEF00EA0D20 /* Main_iPhone.storyboard in Resources */,
 				2F0B563118E87AEF00EA0D20 /* InfoPlist.strings in Resources */,
@@ -411,6 +410,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2F0B563018E87AEF00EA0D20 /* en */,
+				2F0CEC01193359D100DDF268 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -418,19 +418,10 @@
 		2F0B563818E87AEF00EA0D20 /* Main_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2F0B563918E87AEF00EA0D20 /* Base */,
 				2F266B131933305800B08187 /* en */,
+				2F0CEC00193359D100DDF268 /* it */,
 			);
 			name = Main_iPhone.storyboard;
-			path = nextarconsulting;
-			sourceTree = "<group>";
-		};
-		2F0B563B18E87AEF00EA0D20 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F0B563C18E87AEF00EA0D20 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			path = nextarconsulting;
 			sourceTree = "<group>";
 		};
@@ -438,6 +429,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2F0B565518E87AEF00EA0D20 /* en */,
+				2F0CEC02193359D100DDF268 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
