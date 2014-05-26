@@ -324,7 +324,7 @@ NSString *caricaDatiAggiorna = @"0";
         }
         
         if ([elementName isEqualToString:@"company"]) {
-            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+           while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
                 immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
             NSString* noWhiteSpace =  [immutableString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
             noWhiteSpace =[ noWhiteSpace stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -403,12 +403,14 @@ NSString *caricaDatiAggiorna = @"0";
             [_Messaggitravel addObject:immutableString];
         }
         if ([elementName isEqualToString:@"job_description"]) {
-            while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];
+  /*          while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];*/
             [_Messaggijob_description addObject:immutableString];
         }
         
         if ([elementName isEqualToString:@"preferred_skills"]) {
+   /*         while ((r = [immutableString rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+                immutableString = [immutableString stringByReplacingCharactersInRange:r withString:@""];*/
             [_Messaggipreferred_skills addObject:immutableString];
         }
 

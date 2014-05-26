@@ -31,7 +31,6 @@
 		2F5EEFC218F58E93003CF4D2 /* DettaglioMessaggi.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEF9918F58E93003CF4D2 /* DettaglioMessaggi.m */; };
 		2F5EEFCF18F58E93003CF4D2 /* CheckConnessione.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB318F58E93003CF4D2 /* CheckConnessione.m */; };
 		2F5EEFD018F58E93003CF4D2 /* Contattaci.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB518F58E93003CF4D2 /* Contattaci.m */; };
-		2F5EEFD118F58E93003CF4D2 /* Aggiorna.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFB718F58E93003CF4D2 /* Aggiorna.m */; };
 		2F5EEFDC18F5A5CA003CF4D2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5EEFDB18F5A5CA003CF4D2 /* Reachability.m */; };
 		2F8D542D18F5C36B00C6E5A9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D542B18F5C36B00C6E5A9 /* Model.xcdatamodeld */; };
 		2F8D543018F5C4E800C6E5A9 /* Lavori.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D542F18F5C4E800C6E5A9 /* Lavori.m */; };
@@ -72,6 +71,7 @@
 		2F0B565318E87AEF00EA0D20 /* nextarconsultingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nextarconsultingTests-Info.plist"; sourceTree = "<group>"; };
 		2F0B565518E87AEF00EA0D20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F0B565718E87AEF00EA0D20 /* nextarconsultingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nextarconsultingTests.m; sourceTree = "<group>"; };
+		2F266B131933305800B08187 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		2F2B2C1218EDD830009F9AE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2F2B2C1418EDDC1C009F9AE9 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
 		2F2B2C1518EDDCCF009F9AE9 /* 120120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120120.png; sourceTree = "<group>"; };
@@ -95,8 +95,6 @@
 		2F5EEFB318F58E93003CF4D2 /* CheckConnessione.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckConnessione.m; sourceTree = "<group>"; };
 		2F5EEFB418F58E93003CF4D2 /* Contattaci.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contattaci.h; sourceTree = "<group>"; };
 		2F5EEFB518F58E93003CF4D2 /* Contattaci.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contattaci.m; sourceTree = "<group>"; };
-		2F5EEFB618F58E93003CF4D2 /* Aggiorna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aggiorna.h; sourceTree = "<group>"; };
-		2F5EEFB718F58E93003CF4D2 /* Aggiorna.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aggiorna.m; sourceTree = "<group>"; };
 		2F5EEFDA18F5A5CA003CF4D2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		2F5EEFDB18F5A5CA003CF4D2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		2F8D542C18F5C36B00C6E5A9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -190,8 +188,6 @@
 				2F0375D11914FE5C0083A38B /* AggiornaMessaggi.m */,
 				2F5EEFB418F58E93003CF4D2 /* Contattaci.h */,
 				2F5EEFB518F58E93003CF4D2 /* Contattaci.m */,
-				2F5EEFB618F58E93003CF4D2 /* Aggiorna.h */,
-				2F5EEFB718F58E93003CF4D2 /* Aggiorna.m */,
 				2F0B563518E87AEF00EA0D20 /* AppDelegate.h */,
 				2F0B563618E87AEF00EA0D20 /* AppDelegate.m */,
 				2F0B564418E87AEF00EA0D20 /* Images.xcassets */,
@@ -378,7 +374,6 @@
 				2F5EEFC118F58E93003CF4D2 /* MessaggiTableViewCell.m in Sources */,
 				2F0B563718E87AEF00EA0D20 /* AppDelegate.m in Sources */,
 				2F8D543018F5C4E800C6E5A9 /* Lavori.m in Sources */,
-				2F5EEFD118F58E93003CF4D2 /* Aggiorna.m in Sources */,
 				2F0B563318E87AEF00EA0D20 /* main.m in Sources */,
 				2F5EEFD018F58E93003CF4D2 /* Contattaci.m in Sources */,
 				2F94D9C11921278D00749D45 /* CampiVisibili.m in Sources */,
@@ -424,6 +419,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2F0B563918E87AEF00EA0D20 /* Base */,
+				2F266B131933305800B08187 /* en */,
 			);
 			name = Main_iPhone.storyboard;
 			path = nextarconsulting;

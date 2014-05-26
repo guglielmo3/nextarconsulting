@@ -50,7 +50,7 @@
 -(void)performTWRequestUpload;
 -(IBAction)AggPreferito:(id)sender;
 -(IBAction)TweetthisButtonClicked:(id)sender;
--(IBAction)loginToFacebook:(id)sender;
+//-(IBAction)loginToFacebook:(id)sender;
 -(IBAction)Pinch:(UIPinchGestureRecognizer *)recognizer;
 -(IBAction)Candidati:(id)sender;;
 
@@ -80,9 +80,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *pay_range;
 @property (nonatomic, strong) IBOutlet UILabel *duration;
 @property (nonatomic, strong) IBOutlet UILabel *travel;
-@property (nonatomic, strong) IBOutlet UITextView *job_description;
-@property (nonatomic, strong) IBOutlet UILabel *preferred_skills;
-
+@property (nonatomic, strong) IBOutlet UIWebView *job_description;
+@property (nonatomic, strong) IBOutlet UIWebView *preferred_skills;
 //@property (strong, nonatomic) ACAccountStore *accounts;
 
 

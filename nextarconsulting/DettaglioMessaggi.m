@@ -89,28 +89,61 @@ Parametri *parametri;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     NSString *DataConvert;
-
+    NSString *result;
     
-    self.job_title.text = [self.MessaggiDetailModel objectAtIndex:0];
+   self.job_title.text = [self.MessaggiDetailModel objectAtIndex:0];
     self.job_code.text = [self.MessaggiDetailModel objectAtIndex:1];
+ 
+ /*   NSString *result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:0]];
+    [self.job_title loadHTMLString:result baseURL:nil];
+  
+    result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:1]];
+    [self.job_code loadHTMLString:result baseURL:nil];*/
 
     DataConvert =[self.MessaggiDetailModel objectAtIndex:2];
-    self.posting_date.text = [dateFormatter stringFromDate:[self.MessaggiDetailModel objectAtIndex:2]];
-    DataConvert =[self.MessaggiDetailModel objectAtIndex:2];
+  //  result = [NSString stringWithFormat:@"%@", DataConvert];
+   // [self.posting_date loadHTMLString:result baseURL:nil];
+     self.posting_date.text = [dateFormatter stringFromDate:[self.MessaggiDetailModel objectAtIndex:2]];
+    
+    DataConvert =[self.MessaggiDetailModel objectAtIndex:3];
+   // result = [NSString stringWithFormat:@"%@", DataConvert];
+    //[self.closing_date loadHTMLString:result baseURL:nil];
     self.closing_date.text = DataConvert;
     
-    self.category.text = [self.MessaggiDetailModel objectAtIndex:4];
+    //result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:4]];
+ //  [self.category loadHTMLString:result baseURL:nil];
+     self.category.text = [self.MessaggiDetailModel objectAtIndex:4];
+   
+    //result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:5]];
+   //[self.department loadHTMLString:result baseURL:nil];
     self.department.text = [self.MessaggiDetailModel objectAtIndex:5];
+    
     self.location.text= [self.MessaggiDetailModel objectAtIndex:6];
+    //result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:11]];
+  //[self.location loadHTMLString:result baseURL:nil];
+    
+    //result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:8]];
+   //[self.education loadHTMLString:result baseURL:nil];
     self.education.text=[self.MessaggiDetailModel objectAtIndex:8];
+    
+    //result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:9]];
+   //[self.duration loadHTMLString:result baseURL:nil];
     self.duration.text=[self.MessaggiDetailModel objectAtIndex:9];
+ 
+    //result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:10]];
+    //[self.travel loadHTMLString:result baseURL:nil];
     self.travel.text =[self.MessaggiDetailModel objectAtIndex:10];
+
     
-    NSString *result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:11]];
+     result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:11]];
     
-    self.job_description.text = result;
+    //self.job_description.text = result;
+    [self.job_description loadHTMLString:result baseURL:nil];
     
-  
+    result = [NSString stringWithFormat:@"%@", [self.MessaggiDetailModel objectAtIndex:13]];
+    
+    [self.preferred_skills loadHTMLString:result baseURL:nil];
+    
     
     
     
