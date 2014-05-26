@@ -88,7 +88,7 @@ Parametri *parametri;
  
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-  //  [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
     NSString *DataConvert;
     NSString *result;
     
