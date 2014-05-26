@@ -1,75 +1,75 @@
 
 /* Class = "IBUILabel"; text = "Città"; ObjectID = "34L-Za-3Yr"; */
-"34L-Za-3Yr.text" = "Location";
+"34L-Za-3Yr.text" = "Città";
 
 /* Class = "IBUILabel"; text = "Codice"; ObjectID = "5lf-Hd-5QO"; */
-"5lf-Hd-5QO.text" = "Job Code";
+"5lf-Hd-5QO.text" = "Codice";
 
 /* Class = "IBUILabel"; text = "07/Mag/2014"; ObjectID = "9xU-wj-SIh"; */
 "9xU-wj-SIh.text" = "07/Mag/2014";
 
 /* Class = "IBUILabel"; text = "Le nostri sedi"; ObjectID = "APd-9n-UJa"; */
-"APd-9n-UJa.text" = "All our sites";
+"APd-9n-UJa.text" = "Le nostri sedi";
 
 /* Class = "IBUINavigationItem"; title = "Nextar Consulting"; ObjectID = "Aao-bO-bLY"; */
 "Aao-bO-bLY.title" = "Nextar Consulting";
 
 /* Class = "IBUILabel"; text = "Descrizione"; ObjectID = "CQ4-qA-IVT"; */
-"CQ4-qA-IVT.text" = "Description";
+"CQ4-qA-IVT.text" = "Descrizione";
 
 /* Class = "IBUIButton"; normalTitle = "Più Informazioni"; ObjectID = "DCz-aR-FmO"; */
-"DCz-aR-FmO.normalTitle" = "More Information";
+"DCz-aR-FmO.normalTitle" = "Più Informazioni";
 
 /* Class = "IBUILabel"; text = "Ruolo"; ObjectID = "FOg-nI-Nsu"; */
-"FOg-nI-Nsu.text" = "Role";
+"FOg-nI-Nsu.text" = "Ruolo";
 
 /* Class = "IBUILabel"; text = "Pubblicato il"; ObjectID = "Ga9-8S-k5d"; */
-"Ga9-8S-k5d.text" = "Posting";
+"Ga9-8S-k5d.text" = "Pubblicato il";
 
 /* Class = "IBUITabBarItem"; title = "Messaggi"; ObjectID = "JZq-sq-36G"; */
-"JZq-sq-36G.title" = "Messagge";
+"JZq-sq-36G.title" = "Messaggi";
 
 /* Class = "IBUILabel"; text = "Scade il"; ObjectID = "K9I-np-9Lq"; */
-"K9I-np-9Lq.text" = "Closing";
+"K9I-np-9Lq.text" = "Scade il";
 
 /* Class = "IBUINavigationItem"; title = "Nextar Consulting"; ObjectID = "LPl-uC-cWW"; */
 "LPl-uC-cWW.title" = "Nextar Consulting";
 
 /* Class = "IBUILabel"; text = "Salario/Tariffa"; ObjectID = "Lwh-cB-8pq"; */
-"Lwh-cB-8pq.text" = "Salary";
+"Lwh-cB-8pq.text" = "Salario/Tariffa";
 
 /* Class = "IBUINavigationItem"; title = "Nextar Consulting"; ObjectID = "Odf-QM-iQN"; */
 "Odf-QM-iQN.title" = "Nextar Consulting";
 
 /* Class = "IBUIButton"; normalTitle = "Mandaci un'email"; ObjectID = "OiR-x5-jrq"; */
-"OiR-x5-jrq.normalTitle" = "Send an email";
+"OiR-x5-jrq.normalTitle" = "Mandaci un'email";
 
 /* Class = "IBUIButton"; normalTitle = "Roma"; ObjectID = "Oqk-ip-l0a"; */
 "Oqk-ip-l0a.normalTitle" = "Roma";
 
 /* Class = "IBUILabel"; text = "Categoria"; ObjectID = "QSy-if-ywP"; */
-"QSy-if-ywP.text" = "Category";
+"QSy-if-ywP.text" = "Categoria";
 
 /* Class = "IBUIButton"; normalTitle = "UK"; ObjectID = "Usc-nF-qCN"; */
 "Usc-nF-qCN.normalTitle" = "UK";
 
 /* Class = "IBUILabel"; text = "Città"; ObjectID = "ZuS-XK-Y85"; */
-"ZuS-XK-Y85.text" = "City";
+"ZuS-XK-Y85.text" = "Città";
 
 /* Class = "IBUILabel"; text = "Luogo"; ObjectID = "bPc-Dy-dAs"; */
-"bPc-Dy-dAs.text" = "Location";
+"bPc-Dy-dAs.text" = "Luogo";
 
 /* Class = "IBUITabBarItem"; title = "Contattaci"; ObjectID = "bbG-2B-KMR"; */
-"bbG-2B-KMR.title" = "Contact";
+"bbG-2B-KMR.title" = "Contattaci";
 
 /* Class = "IBUILabel"; text = "Titolo studio"; ObjectID = "bs1-6D-DV4"; */
-"bs1-6D-DV4.text" = "Education";
+"bs1-6D-DV4.text" = "Titolo studio";
 
 /* Class = "IBUILabel"; text = "Salario"; ObjectID = "eJY-rV-zfb"; */
-"eJY-rV-zfb.text" = "Salary";
+"eJY-rV-zfb.text" = "Salario";
 
 /* Class = "IBUILabel"; text = "Titolo"; ObjectID = "fMG-Gi-5mW"; */
-"fMG-Gi-5mW.text" = "Title";
+"fMG-Gi-5mW.text" = "Titolo";
 
 /* Class = "IBUILabel"; text = "Company"; ObjectID = "hM3-G6-A55"; */
 "hM3-G6-A55.text" = "Company";
@@ -81,22 +81,22 @@
 "jRW-fx-oD7.normalTitle" = "Torino";
 
 /* Class = "IBUILabel"; text = "Skills Richiesti "; ObjectID = "osO-bl-pTx"; */
-"osO-bl-pTx.text" = "Preferred Skills";
+"osO-bl-pTx.text" = "Skills Richiesti ";
 
 /* Class = "IBUILabel"; text = "Societa"; ObjectID = "pkv-EF-K5g"; */
-"pkv-EF-K5g.text" = "Society";
+"pkv-EF-K5g.text" = "Societa";
 
 /* Class = "IBUILabel"; text = "Data Annuncio"; ObjectID = "qxu-uO-1fo"; */
-"qxu-uO-1fo.text" = "Posted On";
+"qxu-uO-1fo.text" = "Data Annuncio";
 
 /* Class = "IBUILabel"; text = "Durata"; ObjectID = "ro9-Ld-gaj"; */
-"ro9-Ld-gaj.text" = "Duration";
+"ro9-Ld-gaj.text" = "Durata";
 
 /* Class = "IBUILabel"; text = "Scade il"; ObjectID = "waU-kw-pTr"; */
-"waU-kw-pTr.text" = "Closing on";
+"waU-kw-pTr.text" = "Scade il";
 
 /* Class = "IBUILabel"; text = "07/Mag/2014"; ObjectID = "xsN-fE-c9L"; */
 "xsN-fE-c9L.text" = "07/Mag/2014";
 
 /* Class = "IBUILabel"; text = "Trasferte"; ObjectID = "y96-FZ-m7b"; */
-"y96-FZ-m7b.text" = "Travel";
+"y96-FZ-m7b.text" = "Trasferte";
